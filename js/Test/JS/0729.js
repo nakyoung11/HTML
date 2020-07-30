@@ -1,7 +1,8 @@
 
 
+    
     var now = new Date();//현재날짜
-    var firstDate = new Date('#userday');//내가 설정 
+    var firstDate = new Date('#userday.');//내가 설정 
     console.log(firstDate)
     var start = firstDate.getTime(); //기념일의 밀리세컨드를 구함. 1000분의 1초
     var end = now.getTime() //오늘의 밀리세컨드를 구함
