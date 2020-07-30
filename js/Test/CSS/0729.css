@@ -9,10 +9,16 @@
         box-shadow: 0px 25px rgb(167, 145, 189);
     }
 
+    img {width: 30px;height: 25px; }
+
     .day1 {
         display: inline;
         text-align: center;
     }
+
+    .day1 label, input {margin: 5px auto; display: inline-block; }
+    .day1 label {margin-left: 50px;}
+    .day1 button{height: 25px;width: 50px; font-size: 5px;}
 
     .day1 h3 {
         font-size: 1.3em;
@@ -57,26 +63,24 @@
         font-size: 1.2em;
         font-weight: bold;
         line-height: 35px;
-        text-align: center;
-      
+        text-align: center;    
         border-bottom: 3px dotted white;
         color: rgb(75, 69, 68);
         margin-top: 30px;
-        margin-left: 25px;
         font-size: 17px;
     }
 
     .day2 .item_date {
-        float: left;
+  
+        float: right;
         width: 200px;
-        margin-top: 30px;
         font-size: 1.2em;
-        margin-left: 5px;
-        line-height: 35px;
-        text-align: right;
-        padding-left: 20px;
-        border-bottom: 3px dotted white;
-        font-size: 16px;
-        color: rgb(73, 59, 90);
         font-weight: bold;
+        line-height: 35px;
+        text-align: center;
+      
+        border-bottom: 3px dotted white;
+        color: rgb(75, 69, 68);
+       
+     
     }

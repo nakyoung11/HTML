@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체 생성자 </title>
+</head>
+<body>
+    <script>
+
+        function Student(name, kor, eng, mat){
+            this.name=name;
+            this.kor=kor;
+            this.eng=eng;
+            this.mat=mat;
+
+            //메소드
+            //익명함수 
+            this.sum=function(){
+                return (this.kor + this.eng + this.mat);
+            }
+          //  this.ave=this.sum()/3; 프로퍼티
+
+            this.ave=function(){
+                return this.sum()/3
+            }
+
+            this.showInfo=function(){
+                return "이름: "+this.name+"  총점:"+this.sum()+"  평균: "+this.ave().toFixed(2)+"<br>";
+            }
+
+
+        }
+
+        //객체 생성
+        //var s1= new Student('김이나',85, 75, 74);
+        //document.write("이름: "+s1.name+" 총점: "+s1.sum()+" 평균: "+s1.ave())
+
+        //객체 배열생성
+        var arrStu=[
+        new Student('김이나',85, 75, 74),
+        new Student('용용이',80, 65, 74),
+        new Student('밍키',90,100, 24),
+        new Student('제시카',65, 85, 94),
+        new Student('또띠',95, 80, 54),
+        ]
+
+        for(var i=0;i<arrStu.length;i++){
+         document.write(arrStu[i].showInfo())
+        }
+
+
+
+
+    </script>
+   
+</body>
+</html>

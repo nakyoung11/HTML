@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>익명함수와 화살표 표기법</title>
+</head>
+<body>
+    <script>
+        //익명함수 
+       var f1 = function(){
+            return "안뇨용";
+        }
+      
+
+        //ES6 버전 추가된 개념: 함수의 화살표 표기법
+        //화살표 표기법은 익명함수를 간결하게 사용하는 방법
+
+        let a1 = ()=> "안뇨옹 화살표야"
+
+        
+
+
+        //즉시 실행함수
+        (function(){
+            return "우와";
+        }());
+
+        // 익명함수- 매개변수 1개 , 문자열을 만들어서 리턴
+        var f2= function(name){return name+ "님 안뇨용"}
+
+        let a2 = name => `${name} 니임.. 도망치세요!!`//~``````쓰기  $는 매개 변수, ${매개변수}
+
+        document.write(a2('이나경'));
+
+
+        //3. 익명함수 - 매개변수 2개
+
+        var f3 = function(a,b){
+            return a+b
+        }
+
+        let a3 =(a, b)=> a + b; //괄호 생략 불가능. 
+
+    </script>
+</body>
+</html>
