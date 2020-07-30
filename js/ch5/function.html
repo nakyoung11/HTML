@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수 1</title>
+    <!-- 1. 자바스크립트에서는 메소도(method)와 함수(function)을 구분해서 사용
+    메소드- 객체의 멤버로 들어가 있는것
+    함수- function 키워드 만들어 사용하는것
+    2. 함수(function)-특정기능이나 작업을 수행하는 하나의 단위
+    3. 함수 생성부분(함수 정의) 과 함수 사용(함수 호출)부분으로 나누어진다. 
+    4. 간단하게말하면 만들고 사용함 
+    5. 일반적으로는 함수를 사용하기 전에 생성하고, 다른  위치에서 호출하여 사용함.
+    -->
+</head>
+
+<body>
+    <script>
+        //1. 1부터 10까지의 합을 출력하는 함수
+
+        function sum1() { //함수 생성
+            var tot = 0;
+            for (var i = 1; i <= 10; i++) {
+                tot += i;
+            }
+            document.write("1~10까지의 합: ", tot, "<br>")
+
+        }
+
+        //함수 사용(함수 호출)
+        sum1();
+
+        //2. 매개변수를 가진 함수 생성
+        //   1~n까지의 합을 구하는 함수
+
+        function sum2(n) {
+            var tot = 0;
+            for (var i = 1; i <= n; i++) {
+                tot += i
+            }
+            document.write("1~", n, "까지 합:", tot, "<br>")
+        }
+        sum2(30);
+
+
+        //3. 리턴값을 가진 함수
+        //1~n까지의 합을 구하는 함수 
+
+        function sum3(n) {
+            var tot = 0;
+            for (var i = 1; i <= n; i++) {
+                tot += i
+            }
+           return tot;
+        }
+        
+        var result= sum3(20);//1부터 20까지 합을 받아서 저정
+        document.write("1~ 20까지의 합: "+ result)
+
+
+    </script>
+</body>
+
+</html>

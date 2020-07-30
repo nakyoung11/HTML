@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="KO">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>날짜 2</title>
+</head>
+<body>
+    <script>
+        //날짜 직접 설정하는 방법
+        // 2020년 5월 31일로 날짜를 설정
+
+        //1. 년, 월, 일 설정해서 사용
+        var date1=new Date(2002,4,31);//0~11, 4로 적으면 5월)
+        var year=date1.getFullYear();
+        var month=date1.getMonth();
+        var day=date1.getDate();
+        document.write(year+"년 "+ (month+1)+"월"+day+"일<br>")
+        document.write("<hr>")
+
+        //2. 
+        var date2=new Date(2020,0,31,18,32,44);//1월 31일
+        var year2=date2.getFullYear();
+        var month2=date2.getMonth();
+        var day2=date2.getDate();
+        document.write(year2+"년 "+ (month2+1)+"월"+day2+"일<br>"+date2.getHours()+"시"
+        +date2.getMinutes()+"분"+ date2.getSeconds()+"시<br>");
+
+        //3.
+        var date3=new Date();
+        date3.setFullYear(2020);
+        date3.setMonth(6);
+        date3.setDate(27)
+
+         var year3=date3.getFullYear();
+        var month3=date3.getMonth();
+        var day3=date3.getDate();
+        document.write(year3+"년 "+ (month3+1)+"월"+day3+"일<br>")
+
+        document.write("<hr>")
+
+
+
+    </script>
+    
+</body>
+</html>

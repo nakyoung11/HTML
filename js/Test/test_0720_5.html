@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5번</title>
+    <!-- 입력창으로보투 3과목의 정수를 입력받아서 결과로 출력
+    입력: 국어점수 입력, 영어점수입력, 수학점수 입력
+    출력: 평균점수, 학점을 출력(A:90이상 B: 80~89  C:70~79 D:60~69 F:60미만) -->
+</head>
+
+<body>
+    <script>
+        var ko = Number(prompt("국어 점수를 입력하세요."));
+        var en = Number(prompt("영어 점수를 입력하세요."));
+        var me = Number(prompt("수학 점수를 입력하세요."));
+
+        var avgF = (ko + en + me) / 3
+        var avg = avgF.toFixed(1); //반올림하여 소수점 1번째 자리 까지만 나타냄
+
+        document.write("평균은 " + avg + "점 입니다.");
+        if (avg >= 90) {
+            document.write("학점은 A 학점입니다.");
+        } else if (avg >= 80) {
+            document.write("학점은 B 학점입니다.");
+        } else if (avg >= 70) {
+            document.write("학점은 C 학점입니다.");
+        } else if (avg >= 60) {
+            document.write("학점은 D 학점입니다.");
+        } else {
+            document.write("학점은 F 학점입니다.");
+        }
+
+    </script>
+</body>
+
+</html>

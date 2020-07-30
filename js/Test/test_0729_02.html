@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기념일 계산기</title>
+<!-- css와 자바 스크립트 분리시키고, 
+    기념일 입력{label}, 실제 날짜(input), 날짜계산(butt0n) 넣어서 값을 입력받아 출력하기  -->
+</head>
+
+<link rel="stylesheet" href="/Test/CSS/0729.css">
+
+<body>
+    <div class="container">
+
+        <div class="day1">
+            <h3>기념일 계산기</h3>
+            <p style="color: rgb(139, 175, 150);">당신의 소중한 기념일을 계산해 드립니다.</p>
+            <label for="">기념일을 입력해주세요</label>
+            <input type="text" id="userday" placeholder="예)20200729">
+            <button onclick="calcDay();" ><img src='https://garitonkids.com/wp-content/uploads/2020/01/805_4.png'> </button>
+
+
+        </div>
+        <div class="bar">
+            <p style="font-weight: bold;">기념일로부터 오늘까지 <span class="accent" id="passDay"></span>일 지났습니다. </p>
+        </div>
+        <div class="day2">
+            <ul>
+                <li class="item_title"> 100일</li>
+                <li class="item_date" id="date100"></li>
+            </ul>
+            <ul>
+                <li class="item_title"> 200일</li>
+                <li class="item_date" id="date200"></li>
+            </ul>
+
+            <ul>
+                <li class="item_title"> 1년</li>
+                <li class="item_date" id="date365"></li>
+            </ul>
+
+            <ul>
+                <li class="item_title"> 500일</li>
+                <li class="item_date" id="date500"></li>
+            </ul>
+
+            <ul>
+                <li class="item_title"> 2년</li>
+                <li class="item_date" id="date730"></li>
+            </ul>
+
+            <ul>
+                <li class="item_title"> 1000일</li>
+                <li class="item_date" id="date1000"></li>
+            </ul>
+        </div>
+
+    </div>
+    <script src="JS/0729.js"></script>
+
+</body>
+
+</html>

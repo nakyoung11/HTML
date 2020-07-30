@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1차원배열</title>
+    기본 for문은 정해진 인덱스 만큼 접근이 가능
+    for in 문은 전체 접근 
+</head>
+<body>
+    <script>
+    //1. 차원 배열    
+        //1. 배열만들기: 
+        // var score=[85, 90, 94, 77, 68, 52, 72, 47, 48, 98, 82];
+
+        //2. 배열만들기:
+        var score= new Array(85, 90, 94, 77, 68, 52, 72, 47, 48, 98, 82)
+    
+    //배열값 출력
+
+    document.write(score +"<br>")
+    document.write("score의 길이: " + score.length+"<br>");
+    
+    //for를 이용해서 출력하기 (for 기본)
+
+    for(var i=0; i<10;i++){
+    
+        document.write(score[i]+ " ");
+    }
+
+    //총점, 평균
+
+    var tot=0; 
+    var ave=0;
+
+    for(var i=0; i<score.length; i++){
+        tot+=score[i];              // 
+    }
+    ave=tot/score.length
+
+    document.write("<br>"+"총점: "+tot+"<br>");
+    document.write("평균: "+ave.toFixed(2)+"<br>");
+
+    // for in 문으로 출력하기 (for 확장)
+    var tot=0; 
+    var ave=0;
+
+    for(var i in score){
+        document.write(score[i]+" ")              // i라고하면 인덱스 번호만 나옴. 
+        tot+=score[i];              
+    }
+    ave=tot/score.length
+    document.write("<br>"+"총점: "+tot+"<br>");
+    document.write("평균: "+ave.toFixed(2)+"<br>");
+
+    </script>
+</body>
+</html>

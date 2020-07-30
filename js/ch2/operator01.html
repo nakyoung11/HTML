@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연산자</title>
+</head>
+<body>
+    <h3>연산자</h3>
+    <p>
+        1. 산술연산자: + - * / % 자바와 동일<br>
+        2. 증감연산자(++,--)<br>
+        3. 비교(관계연산자): < , > , <=, >=, ==,!=,===,!==
+           논리값 형태로 표현
+           < , > , <=, >= : 값만 비교
+           ===, !== : 값과 타입이 모두 맞을때 참, 거짓 반환 
+    </p>
+
+    <script>
+        var a=30, b=10, c;
+         c = a+b;
+        console.log(c);
+        c = a*b;
+        console.log(c);
+        c = a-b;
+        console.log(c);
+        c = a/b;
+        console.log(c);
+        c = a%b;
+        console.log(c);
+
+        console.log(++a); //값을 올린 후 출력
+        console.log(a++); //값을 출력후 +1
+        console.log(a)
+        
+        console.log(a+">"+b+"="+(a>b));
+        console.log(a+"==="+b+"="+(a===b))
+
+        var a="10", b=10;
+        console.log(" a 데이터 타입"+typeof a +" 값"+a)
+        console.log(" b 데이터 타입"+typeof b +" 값"+b)
+        console.log(a+"=="+b+"="+(a==b));
+        console.log(a+"==="+b+"="+(a===b));
+
+
+        var a= 10, b=10;
+        console.log(a+"=="+b+"="+(a==b));
+        console.log(a+"==="+b+"="+(a===b));
+         
+    </script>
+    
+</body>
+</html>

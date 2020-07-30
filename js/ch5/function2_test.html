@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="theBody">
+    <button onclick="changecolor()">배경색바꾸기</button>
+    <script>
+        var color=['white', 'yello', 'aqua','purple']
+        var i=0;
+
+        function changecolor(){
+           i++
+           i%= color.length;
+
+            
+        
+
+        var bodyTag=document.getElementById("theBody");
+        bodyTag.style.backgroundColor=color[i];
+        
+    }
+    </script> 
+</body>
+</html>

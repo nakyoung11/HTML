@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        var menu = Number(prompt("메뉴를 선택하시오(1~4)", "0"))
+        
+        //조건: 정수만 가능하고, 실수 불가능, 문자열 가능
+        //조건에 따라 case문 선택
+        //':'은 레이블의 의미
+        //case : ~ 인 경우에 
+        //if와 switch : switch 문으로 만들 수 있는 것은 모두 if로 가능, 반대로는 불가능
+        // 정수, 문자열을 조건으로 하는 경우, if 보다 훨씬 더 간결하고 명확한 프로그래밍 가능
+        
+        switch (menu) { 
+            case 1:
+                document.write("파일 열기");
+                braek;
+            case 2:
+                document.write("파일 읽기");
+                braek;
+            case 3:
+                document.write("파일 쓰기");
+                braek;
+            case 4:
+                document.write("파일 닫기");
+                braek;
+            default:
+                document.write("다시 입력해주세요.");
+                braek;
+        }
+
+    </script>
+</body>
+
+</html>

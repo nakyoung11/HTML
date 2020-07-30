@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구구단</title>
+    <!-- 단입력받아서 구구단 출력 -->
+</head>
+<style>
+    div {
+        margin: 15px;
+        line-height: 30px;
+        padding: 20px;
+        display: inline-block;
+        font-size: 25px;
+        border: 1px solid black;
+        background-color: rgb(233, 203, 193);
+        width: 30%;
+        text-align: center;
+    }
+
+    h3 {
+        text-align: center;
+    }
+</style>
+
+<body>
+
+    <script>
+
+        var dan = parseInt(prompt("단을 입력하세요."))
+
+        document.write("<div><h3>" + dan + "단" + "</h3>")
+        for (var i = 1; i < 10; i++) {
+            document.write(dan + " * " + i + "=" + i * dan + "<br>")
+        }
+        document.write("</div>")
+
+    </script>
+
+</body>
+
+</html>

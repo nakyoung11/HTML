@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0721_2</title>
+    <!-- 1. 국어 영어 수학 점수 입력 받아서 평균과 학점을 구하는 프로그램
+    출력: 평균, 학점은 평균에 따라 A=90~100; b=80~89; c=70~79, d:60~69 F:60미만 -->
+</head>
+
+<body>
+    <script>
+        var ko = parseInt(prompt("국어 성적을 입력하세요.", " "));
+        var en = parseInt(prompt("영어 성적을 입력하세요.", " "));
+        var mh = parseInt(prompt("수학 성적을 입력하세요.",  " "));
+        var avg =(ko + en + mh) / 3
+
+        var grade=parseInt(avg/10);
+
+
+        switch (grade){
+            case 10: case 9:
+            document.write("평균은 " + avg + "점 입니다. 학점은 A입니다."); break;
+            case 8: 
+            document.write("평균은 " + avg + "점 입니다. 학점은 B입니다."); break;
+            case 7: 
+            document.write("평균은 " + avg + "점 입니다. 학점은 C입니다."); break;
+            case 6: 
+            document.write("평균은 " + avg + "점 입니다. 학점은 D입니다."); break;
+            default:
+            document.write("평균은 " + avg + "점 입니다. 학점은 F입니다."); break;
+        }
+        
+
+
+
+
+
+
+
+
+
+        // if (avg >= 90) {
+        //     var grade = "A";
+        // } else if (avg >= 80) {
+        //     var grade = "B";
+        // } else if (avg >= 70) {
+        //     var grade = "C";
+        // } else if (avg >= 60) {
+        //     var grade = "D";
+        // }
+
+        
+
+        // switch (grade) {
+        //     case "A":
+        //         document.write("평균은 " + avg + "점 입니다. 학점은 A입니다.");
+        //         break;
+        //     case "B":
+        //         document.write("평균은 " + avg + "점 입니다. 학점은 B입니다.");
+        //         break;
+        //     case "C":
+        //         document.write("평균은 " + avg + "점 입니다. 학점은 C입니다.");
+        //         break;
+        //     case "D":
+        //         document.write("평균은 " + avg + "점 입니다. 학점은 D입니다.");
+        //         break;
+        //     default:
+        //         document.write("평균은 " + avg + "점 입니다. 학점은 F입니다.");
+        //         break;
+        // }
+
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2차원 배열 활용</title>
+</head>
+<!-- 이차원배열의 정보를 출력하시오.
+     총점 평균을 기말 고사 뒤에 출력하시오 -->
+<style>
+    table {
+        border: 1px solid black;
+        border-collapse: collapse;
+        margin: 0px;
+    }
+
+    tr, th,  td {
+        border: 1px solid black;
+        height: 30px;
+        width: 120px;
+    }
+    p{text-align: center;
+    font-size: smaller; margin: 10px;}
+
+
+
+    th {
+        background-color: burlywood;
+        padding: 10px 0px;
+        font-weight: bold;
+    }
+</style>
+
+<body>
+    <table>
+        <caption>
+            <h1>시험성적</h1>
+        </caption>
+        <tr>
+            <th>이름</th>
+            <th>학과</th>
+            <th>중간고사</th>
+            <th>기말고사</th>
+            <th>총점</th>
+            <th>평균</th>
+
+        </tr>
+        <div>
+        <script>
+            var student = new Array(
+                Array("이익준", "컴퓨터공학과", 88, 76),
+                Array("이준", "시각디자인과", 74, 100),
+                Array("최민석", "현대무용전공", 94, 56),
+                Array("김준서", "교육학과", 41, 75),
+                Array("하영식", "경제학과", 80, 90),
+
+            )
+            var totl;
+            var totl_j=0;
+            var totl_g=0;
+            var toSum=0;
+            var ave;
+            var toAve=0;
+
+
+            for (var i = 0; i < student.length; i++) {
+                document.write("<tr>")
+                tot = 0
+                ave = 0
+             
+                for (var z = 0; z <student[i].length; z++) {
+                    if (z > 1) {
+                        tot += student[i][z]
+                        
+                    }
+                    document.write("<td><p>" + student[i][z] + "<p></td>")
+                }
+                totl_j+=student[i][2];
+                totl_g+=student[i][3];
+                toSum+=tot;
+                ave = tot / 2
+                toAve+=ave;
+                document.write("<td/><p>" + tot + "</td><td><p>" + ave + "</td>")
+                document.write("</tr>")
+            }
+            
+            document.write("<tr>")
+            document.write("<td colspan=2><p style='font-weight: bold'>합  계</p></td>")
+            document.write("<td><p>"+totl_j+"</p></td>")
+            document.write("<td><p>"+totl_g+"</p></td>")
+            document.write("<td><p>"+toSum+"</p></td>")
+            document.write("<td><p>"+(toAve/student.length)+"</p></td>")
+            document.write("</tr>")
+                
+
+
+        </script>
+    
+    </table>
+</body>
+
+</html>

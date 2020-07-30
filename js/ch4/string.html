@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var s1 = "hello Javascript World! Java";
+
+        document.write(s1.charAt(6)+"<br>")
+        document.write(s1.indexOf("J")+"<br>")//왼쪽에서 처음 만나는 해당 문자의 위치반환
+        document.write(s1.indexOf("j")+"<br>")//문자열이 없으면 -1반환 
+        // lastIndexOF: 문자열에 해당하는 마지막 인덱스 번호 출력
+        document.write(s1.lastIndexOf("J")+"<br>")
+
+        //match():  
+        document.write(s1.match("Java")+"<br>") // 제일 먼저 찾은 문자열 출력
+        //찾은 문자열이 없는 경우  null
+        document.write(s1.match("HTML")+"<br>")
+
+        //replace():
+        document.write(s1.replace("Java","우와 ")+"<br>")//보일때문
+        document.write(s1+'<br>')
+
+        //실제 바꾸는것은 변수에 대입
+        s1=s1.replace("Java","우와 ")
+        document.write("<br>"+s1+"<br>")
+
+        //search()
+        document.write(s1.search("Java")+"<br>"); //찾는 문자열과 제일먼저 일치하는 인덱스 번호 출력
+
+        //slice()
+        var s2=s1.slice(16,22); //시작번호부터 끝번호-1 까지 잘라내어 새로운 문자열을 생성하여 리턴
+        document.write(s2)
+
+
+        //substring(): 24 부터 -3(음수를 0으로 간주)
+        var s7=s1.substring(24,-3);
+        document.write(s7+"<br>");
+
+        //split() 문자열을 특정 문자 기준으로 나누어 배열로 저장
+        var animals="사자/호랑이/곰/독수리/토끼/사냥꾼"
+        var arr=animals.split("/");
+        for(var i=0; i<arr.length;i++){
+            document.write(arr[i]+" ")
+        }
+        document.write("<br>")
+
+        //아스키 코드
+        var s7="ABCDEavced";
+        var n1=s7.charCodeAt(0);
+        document.write(n1+"<br>")
+
+
+
+
+
+
+        
+
+    </script>
+</body>
+</html>

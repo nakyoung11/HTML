@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수 활용 5</title>
+</head>
+    <!-- 1. 변수를 선언할 때 var! 
+       변수의 중복선언으로 에러발생 (협업시 같은 변수를 사용할 경우 결과가 달라지는 일이 발생할 수도 있음) 
+       ES6버전 부터 let, const로 구분해서 사용하기를 권장하지만, ES5버전을 많이 사용
+       
+    
+    
+    -->
+
+
+<body>
+    <script>
+
+        //1. var는 중복 선언과 할당이 가능
+        var maxScore=90;
+        document.write("최고점수:"+maxScore+"<br>");
+
+
+        ///협업중~~
+        var maxScore= 120;
+        document.write("최고점수:"+maxScore+"<br>");
+
+        //2. let을 사용(변수의 재선언을 막음)
+        let minScore=60; 
+        document.write("최저점수:"+minScore+"<br>");
+        //let minScore=80; // 중복 선언 시 에러
+        minScore=70; //값 할당은 가능
+        document.write("최저점수:"+minScore+"<br>");
+
+
+        //3. const 사용 (상수 선언 : 변수의 재 선언과 할당을 막음)
+        const basicScore=80;
+        document.write("기준점수:"+basicScore+"<br>");
+       // const basicScore=70; //중복선언불가
+       // basicScore=70; // 재할당 불가
+        document.write("기준점수:"+basicScore+"<br>");
+
+        //
+
+
+    </script>
+</body>
+</html>

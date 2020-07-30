@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0721_3</title>
+    <!-- 태어난 월을 입력받아 월의 탄생석과 상징을 보여주는 프로그램
+    입력: 당신이 태어난 월을 입력하시오
+    출력: 탄생석 이미지를 입력한 월에 따라 보여주고, 탄생월과 탄생석, 상징메시지를 출력 
+    결과하면 위에 월별 탄생성과 상징적보를 표로 먼저 출력하고 입력받도록 -->
+    <style>
+        body {
+            background-color: rgba(243, 243, 243, 0.658);
+          
+        }
+
+        table {
+            border: 1px solid black;
+            border-collapse: collapse;
+            width: 70%;
+            margin: 0 auto;
+        }
+
+        tr,
+        th,
+        td {
+            border: 1px solid black;
+            text-align: center;
+            height: 40px;
+        }
+
+        th {
+            background-color: rgb(153, 92, 233);
+            color: cornsilk;
+        }
+
+        button {
+            width: 200px;
+            height: 40px;
+            margin: 20px auto;
+            display: block;
+            border: rgb(211, 153, 128) 1px solid;
+            background-color: rgb(211, 153, 128);
+            border-radius: 10px;
+            box-shadow: 3px  3px rgba(36, 34, 34, 0.658);
+            font-size: larger;
+            font-family: '맑은 고딕';
+            font-weight: bold;
+        }
+
+        img {
+            width: 100%;
+            margin: 20px auto;
+            display: block;
+        }
+
+        p {
+            text-align: center;
+            margin-top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <caption>
+            <h2>월별 탄생석 찾기</h2>
+        </caption>
+
+        <tr>
+            <th>월</th>
+            <th>탄생석</th>
+            <th>상징</th>
+        </tr>
+        <tr>
+            <td>1월</td>
+            <td>가넷</td>
+            <td>사랑, 평화</td>
+        </tr>
+        <tr>
+            <td>2월</td>
+            <td>자수정</td>
+            <td>평화,성실</td>
+        </tr>
+        <tr>
+            <td>3월</td>
+            <td>아쿠아마린</td>
+            <td>총명, 용감</td>
+        </tr>
+        <tr>
+            <td>4월</td>
+            <td>다이아몬드</td>
+            <td>영원한사랑</td>
+        </tr>
+        <tr>
+            <td>5월</td>
+            <td>에메랄드</td>
+            <td>행복, 행운</td>
+        </tr>
+        <tr>
+            <td>6월</td>
+            <td>진주</td>
+            <td>건강, 부귀</td>
+        </tr>
+        <tr>
+            <td>7월</td>
+            <td>루비</td>
+            <td>영원한생명, 열정, 용기</td>
+        </tr>
+        <tr>
+            <td>8월</td>
+            <td>감람석</td>
+            <td>지혜, 부부의행복</td>
+        </tr>
+        <tr>
+            <td>9월</td>
+            <td>사파이어</td>
+            <td>지혜, 불변</td>
+        </tr>
+        <tr>
+            <td>10월</td>
+            <td>오팔</td>
+            <td>희망, 순결</td>
+        </tr>
+        <tr>
+            <td>11월</td>
+            <td>토파즈</td>
+            <td>우정, 인내</td>
+        </tr>
+        <tr>
+            <td>12월</td>
+            <td>터키석</td>
+            <td>성공, 승리</td>
+        </tr>
+    </table>
+
+    <button onclick="show()">나의 탄생석 찾기!</button>
+
+
+
+    <script>
+        function show() {
+            var birthday = parseInt(prompt("당신이 태어난 월을 입력하세요.", " "));
+
+    
+            switch (birthday) {
+                case 1:
+                    document.write("<img src='../Test/imgs/stone01.png'><br>" + "<p>당신의 탄생석은 가넷입니다.</p>")
+                    break;
+                case 2:
+                    document.write("<img src='../Test/imgs/stone02.png'><br>" + "<p>당신의 탄생석은 자수정입니다.</p>")
+                    break;
+                case 3:
+                    document.write("<img src='../Test/imgs/stone03.png'><br>" + "<p>당신의 탄생석은 아쿠아 마린입니다.</p>")
+                    break;
+                case 4:
+                    document.write("<img src='../Test/imgs/stone04.png'><br>" + "<p>당신의 탄생석은 다이아몬드 입니다.</p>")
+                    break;
+                case 5:
+                    document.write("<img src='../Test/imgs/stone05.png'><br>" + "<p>당신의 탄생석은 에메랄드 입니다.</p>")
+                    break;
+                case 6:
+                    document.write("<img src='../Test/imgs/stone06.png'><br>" + "<p>당신의 탄생석은 진주 입니다.</p>")
+                    break;
+                case 7:
+                    document.write("<img src='../Test/imgs/stone07.png'><br>" + "<p>당신의 탄생석은 루비 입니다.</p>")
+                    break;
+                case 8:
+                    document.write("<img src='../Test/imgs/stone08.png'><br>" + "<p>당신의 탄생석은 가람석 입니다.</p>")
+                    break;
+                case 9:
+                    document.write("<img src='../Test/imgs/stone09.png'><br>" + "<p>당신의 탄생석은 사파이어 입니다.</p>")
+                    break;
+                case 10:
+                    document.write("<img src='../Test/imgs/stone10.png'><br>" + "<p>당신의 탄생석은 오팔 입니다.</p>")
+                    break;
+                case 11:
+                    document.write("<img src='../Test/imgs/stone011.png'><br>" + "<p>당신의 탄생석은 토파즈 입니다.</p>")
+                    break;
+                case 12:
+                    document.write("<img src='../Test/imgs/stone12.png'><br>" + "<p>당신의 탄생석은 터키석 입니다.</p>")
+                    break;
+                default:
+                    document.write("입력한 달이 없습니다.");
+
+            }
+        }
+        
+
+    </script>
+
+
+
+</body>
+
+</html>

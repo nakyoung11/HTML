@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- 함수의 종류 -->
+<body>
+
+    <script>
+        //1. 기본함수
+        //함수 생성(정의)
+
+        function add(a, b){
+            // var result= a+b;
+            // return result
+            return a+b;
+        }
+
+        var result= add(10,30)
+        document.write(result,"<br>")
+        
+        // 2. 익명 함수
+        // 익명함수를 만드는 목적이 함수를 담아 호출 시에 전달하고자 함. 
+        // 익명함수 정의
+        var add2 =function(a, b){
+            return a+b;
+        }
+
+        //익명함수 사용
+        var result2= add2(30,40);
+        document.write(result2,"<br>")
+
+        //3. 즉시 실행함수 
+
+       var result3=( function(a,b){
+            return a+b;
+        }(50,60)
+       );
+
+       document.write(result3,"<br>")
+
+       //4. 콜백함수 
+        //어떤 함수의 매개변수로만 사용되는 함수
+        function f1(f2, n){ //f2는 콜백함수 
+            document.write("콜백함수를 "+ n+ "번 호출 하셨습니다.<br>")
+            for(var i=0; i<n; i++){
+                f2(); //콜백 함수 호출
+            }
+        }
+
+      //익명함수 생성
+      var f3=function(){  //콜백함수의 매개변수가됨 
+          document.write("Hello javascript!<br>")
+      }
+
+      //함수 호출
+      f1(f3,5);
+  
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

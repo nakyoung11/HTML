@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function testAvg(arrDate) {
+            var sum = 0
+            for (var i = 0; i < arrDate.length; i++) {
+                sum = Number(prompt(arrDate[i]+"점수를 입력하세요.", " "));
+            }
+            var avg = sum / arrDate.length;
+            return avg
+        }
+        prompt()
+
+        var arrSub=['국어', '수학', '영어','사회'];
+        var result= testAvg(arrSub);
+        document.write("평균점수는 "+ result+" 입니다.")
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수사용법</title>
+    <style>
+        .container {
+            width: 900px;
+            margin: 30px auto;
+        }
+
+        h2, h3 {
+            text-align: center;
+        }
+
+        .content1 {
+            width: 700%;
+        }
+
+        .content1>img {
+            width: 200px;
+            float: left;
+            margin-right: 10px;
+            display: block;
+        }
+
+        .content1 ul {
+            list-style: none;
+            margin-top: 100px;
+        }
+
+        .content1 ul li {
+            margin-bottom: 15px;
+        }
+       
+
+        .content1 li label {
+            width: 80px;
+            text-align: right;
+            float: left;
+            margin-right: 5px;
+        }
+
+        .content1 li input {
+            width: 150px;
+            text-align: right;
+            padding: 5px 10px;
+        }
+
+
+        .content1 button {
+            width: 170px;
+            height: 35px;
+            float: left;
+            margin-left: 85px;
+         
+        }
+    
+
+        .content1 li:nth-child(3) {
+            text-align: right;
+            padding: 5px 10px;
+        }
+        #result{  
+            border: 1px solid gray;
+            background-color: rgba(128, 128, 128, 0.055);
+            width: 170px;
+         
+           float: left;
+           text-align: left;
+           margin-top: 20px;
+           margin-left: 85px;}
+        
+           #result>p{text-align: center;font-size: smaller;}
+
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>코리아 백화점</h2>
+        <h3>할인 판매</h3>
+
+        <div class="content1">
+            <img src="/ch4/img/1.png" alt="">
+            <ul>
+                <li>
+                    <label for="price">정가 </label>
+                    <input type="text" id="price">원
+
+                </li>
+                <li>
+                    <label for="rate">할인율</label>
+                    <input type="text" id="rate">%
+
+                </li>
+                <li>
+                    <button onclick="calcPrice()">할인가격 계산하기</button>
+                </li>
+        
+            </ul>
+        </div>
+
+    </div>
+    <div id="result"><p>할인금액안내</p></div>
+
+    <script>
+        function calcPrice() {
+            var originPrice = document.querySelector('#price').value;
+            var rate = document.querySelector('#rate').value;
+
+    
+
+            //유효성 검사
+            if (originPrice == 0) {
+                alert("가격을 다시 입력해주세요")
+            } else if (rate == 0) {
+                alert("할인율을 입력해주세요. ")
+            } else {
+                var salePrice = originPrice * (rate / 100)
+                var resultPrice = originPrice - salePrice;
+               
+               //1. 알림창 
+               // alert("정가: " + originPrice + "원\n 할인율: " + rate + "%\n판매가: " + resultPrice);
+        
+                //2. 브라우저
+                //-새로운 창을 통해 결과가 출력되는 문제점이 생김
+                //document.write("정가: " + originPrice + "원<br>할인율: " + rate + "%<br>판매가: " + resultPrice)
+            
+                //3. 브라우저를 통한 출력
+              
+               document.querySelector("#result").innerHTML="정가: " + originPrice + "원<br>할인율: " + rate + "%<br>판매가: " + resultPrice
+             
+            }
+
+
+         }
+    </script>
+</body>
+
+</html>

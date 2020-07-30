@@ -1,0 +1,82 @@
+
+    .container {
+        width: 500px;
+        margin: 20px auto;
+        border: 5px solid rgb(255, 255, 255);
+        height: 700px;
+        background-color: rgb(247, 230, 239);
+        border-radius: 40px;
+        box-shadow: 0px 25px rgb(167, 145, 189);
+    }
+
+    .day1 {
+        display: inline;
+        text-align: center;
+    }
+
+    .day1 h3 {
+        font-size: 1.2em;
+        color: rgb(57, 86, 90);
+        margin-top: 50px;
+        letter-spacing: 3px;
+        text-shadow: 0 0 1px rgb(8, 46, 53);
+    }
+
+    .day1 p {
+        font-size: small;
+        color: chocolate;
+    }
+
+    .bar {
+        text-align: center;
+        background-color: rgb(250, 248, 242);
+        margin: 10px;
+        height: 40px;
+        border-radius: 10px;
+    }
+
+    .bar .accent {
+        font-size: medium;
+        color: rgb(245, 19, 19);
+    }
+
+    .bar p {
+        color: lightcoral;
+        font-size: small;
+        margin-top: 40px;
+        padding-top: 10px;
+    }
+
+    .day2 ul {
+        list-style: none;
+    }
+
+    .day2 .item_title {
+        float: left;
+        width: 140px;
+        font-size: 1.2em;
+        font-weight: bold;
+        line-height: 35px;
+        text-align: center;
+      
+        border-bottom: 3px dotted white;
+        color: rgb(75, 69, 68);
+        margin-top: 30px;
+        margin-left: 25px;
+        font-size: 17px;
+    }
+
+    .day2 .item_date {
+        float: left;
+        width: 200px;
+        margin-top: 30px;
+        font-size: 1.2em;
+        margin-left: 5px;
+        line-height: 35px;
+        text-align: right;
+        padding-left: 20px;
+        border-bottom: 3px dotted white;
+        font-size: 16px;
+        color: rgb(73, 59, 90);
+        font-weight: bold;
+    }

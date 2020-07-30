@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2</title>
+    <style>
+        #container{width: 500px; margin: 0 auto;}
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1 id="heading">자바스크립트</h1>
+        <p id="text"> 위 텍스트를 클릭해 보세요.</p>
+    </div>
+    <script>
+        var heading = document.querySelector("#heading"); //querySelector 선택자
+        heading.onclick=function(){
+            heading.style.color="red";
+        }
+
+        //실행하는 것은 body안에 , 선언하는 것은 head안에 쓰는 것이 보통
+    </script>
+</body>
+</html>

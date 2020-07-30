@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>체중관리프로그램</title>
+
+    <!-- 1. 입력창을 통해 name, height, weight 값을 입력받아 변수에 저장
+        2. 표준 몸무게: (키-100)*0.9 을 변수에 저장
+        3. 표준 몸무게의 +5 또는 -5 사이에 있다면 '적정 체중입니다.'
+           표준 몸무게를 벗아난다면 '적정 체중가 아닙니다.'라는 
+           메시지를 브라우저에 출력
+        4. 삼항연산자를 사용해서 출력 (if 도 사용해보아요. ) -->
+</head>
+
+<body>
+    <script>
+        var name = prompt("당신의 이름은 무엇있니까?", " ");
+        var height = prompt("당신의 키를 입력해주세요.", 0);
+        var weight = prompt("당신의 체중을 입력해주요.", 0);
+
+        var stWeight = (Number(height) - 100) * 0.9;
+        console.log(stWeight)
+        var result =
+            Number(weight) <= stWeight + 5 && Number(weight) >= stWeight - 5 ?
+            "적정체중입니다." : "적정체중이 아닙니다.";
+
+        document.write(name + "님은 " + result);
+    </script>
+</body>
+
+</html>

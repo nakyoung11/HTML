@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0720-03t</title>
+    <!-- 확인창으로부터 확인을 받아서 알림창에 결과를 출력
+    확인창 메시지: 공부를 계속 하시겠습니까?
+    알림창 메시지: 네, 공부를 계속 하시겠습니다.
+    아니요 10분만 쉬었다가 공부하겠습니다. -->
+</head>
+
+<body>
+    <script>
+        var con = confirm("공부를 계속하시겠습니까?");
+
+        if (con) {
+            document.write("네, 공부를 계속하겠습니다.");
+        } else {
+            document.write("아니요. 10분만 쉬었다가 공부하겠니다.<br>");
+        }
+    </script>
+</body>
+
+</html>

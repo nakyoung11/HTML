@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중첩for</title>
+    <!-- 12개의 탄생석 이미지를 4행 3열로 출력
+-이미지 밑에 월/탄생석/상징을 나타내는 문자열을 출력
+
+테이블을 사용하지 않고 div로 묶어서 출력 -->
+</head>
+<style>
+table{border: 3px solid black; border-collapse: collapse; width: 800px; background-color: rgb(224, 221, 208);}
+td, tr{border: 8px solid rgb(255, 255, 255); width: 20%; background: linear-gradient(rgb(230, 211, 211),rgb(228, 186, 186));}
+p{text-align: center; font-weight: bold; }
+img{width: 150px; height: 150px; margin: 5px auto; display:block; }
+</style>
+
+<body>
+
+    <script>
+    var sto=[
+    "가넷 / 사랑,진실","자수정 / 평화,성실","아쿠아마린 / 총명,용감",
+    "다이아몬드 / 영원한사랑", "에메랄드 / 행복,행운", "진주 / 건강,부귀", 
+    "루비 / 영원한생명,열정,용기", "감람석 / 지혜,부부의행복", "사파이어 / 지혜,불변"
+    ,"오팔 / 희망,순결", "토파즈 / 우정,인내", "터키석 / 성공,승리"]
+
+    document.write("<table>");
+    var g=1;
+
+
+    for(var i=1;i<4;i++){
+        document.write("<tr>")
+        for(var z=1; z<5; z++){
+           document.write("<td><p>"+g+"월<img src='../Test/imgs/stone0"+g+".png'><br>"+sto[g-1]+"</p></td>")
+           g++
+        }
+        document.write("</tr>")
+    }
+    document.write("</table>");    
+    </script>
+    
+</body>
+</html>

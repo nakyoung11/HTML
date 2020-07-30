@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>형변환 함수</h3>
+    <p>데이터 타입(자료형)을 변환하는 함수<p>
+        <p>
+            1. String(): 문자로 변환하는 함수<br>
+    
+            2. Number(): 숫자로 변환하는 함수<br>
+  
+            3. Boolean(): 비논리형을 논리형으로 변환하는 함수<br>
+            //논리형은 참, 거짓 중 하나인데 
+            // true: 0외의 모든 문자와 숫자 !
+            // false: 0 , null  undefined 빈 문자("";)!
+
+            4. toString(): 숫자를 문자로 변환하는 함수<br>
+
+            5. parseInt(): 문자를 정수로 변환하는 함수<br>
+
+            6. parsFloat(): 문자를 실수로 변환하는 함수<br>
+
+            
+            
+
+        </p>
+
+    </p>
+    <script>
+        var a="10", b=20, c;
+        c=a+b;
+        console.log(c)
+        console.log(typeof c);
+
+        c=Number(a)+b;
+        console.log(c)
+        console.log(typeof c); 
+        console.log(typeof a); //이때만 a의 값을 숫자로 바꿔서 더함, 실제 a의 타입은 string
+
+        a=Number(a);
+        console.log(typeof a);
+// -----------------------------------------
+        var d= Boolean(0)
+        console.log(d);
+
+        console.log(toString(d));
+
+        console.log(Number(d));
+        console.log(String(d));
+        console.log(typeof d);
+// -----------------------------------------        
+        //논리형은 참, 거짓 중 하나인데 
+        // true: 0외의 모든 문자와 숫자 !
+        // false: 0 , null  undefined 빈 문자("";)!
+        var h= Boolean("자바스크립트");
+
+        console.log(h);
+        console.log(typeof h);
+
+        h=Boolean(0);
+        console.log(h);
+        console.log(typeof h);
+
+        h=Boolean(1);
+        console.log(h);
+        console.log(typeof h);
+
+        h=Boolean(-2);
+        console.log(h);
+        console.log(typeof h);
+        
+        h=Boolean(3);
+        console.log(h);
+        console.log(typeof h);
+       
+        h=Boolean(null);
+        console.log(h);
+        console.log(typeof h);
+
+        var ah;
+        console.log(Boolean(ah));
+        console.log(typeof Boolean(ah));
+
+        var i= "";
+        console.log(Boolean(i));
+        console.log(typeof i);
+
+        // ----------------------------------------
+
+        //toString
+        var aaa=10;
+        aaa = aaa.toString(aaa);
+        console.log(aaa);
+
+        //parseInt()
+        var bbb="30";
+        bbb=parseInt(bbb);
+        console.log(bbb);
+
+        //parsFloat()
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

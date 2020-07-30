@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0721_4</title>
+    <!-- 1.입력창으로 부터 정수를 입력받아서 출력하는 프로그램
+    입력: 정수입력  -> 10
+    출력은 : 1~입력받은 숫자 만큼 출력/ 홀수 일때는 글자색을 빨강, 짝수일때는 글자색 파랑 -->
+</head>
+<body>
+    <script>
+        var num = prompt("정수를 입력하세요.", " ");
+
+        for (var i = 1; i <= num; i++) {
+            if (i%2 == 0) {
+                document.write("<p style='color:red'>" + i + "</p>")
+            }
+            else {
+                document.write("<p style='color:blue'>" + i + "</p>")
+        }
+            
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0720-02</title>
+    <!-- 입력창으로부터 가위 바위 보 중에 하나를 입력받아 브라우저화면에 해당 이미지를 
+    출력하는 프로그램 
+    기본값 가위
+    결과: 가위를 입력하셨습니다. 
+    가위 이미지-->
+</head>
+
+<body>
+
+    <script>
+        var action = prompt("가위 바위 보중 어떤것을 선택하시겠습니까", "가위")
+
+        if (action == "가위") {
+            document.write('<img src="/Test/imgs/math_img_1.jpg">' + '<br>');
+            document.write("<h1>가위를 선택하셨습니다.</h1>")
+        } else if (action == "바위") {
+            document.write('<img src="/Test/imgs/math_img_2.jpg">' + '<br>');
+            document.write("<h1>바위를 선택하셨습니다.</h1>")
+        } else if (action == "보") {
+            document.write('<img src="/Test/imgs/math_img_3.jpg">' + '<br>');
+            document.write("<h1>보를 선택하셨습니다.<h1>")
+        }
+    </script>
+
+
+</body>
+
+</html>

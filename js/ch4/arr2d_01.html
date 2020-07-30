@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2차원 배열</title>
+</head>
+<!-- 각 반별로 총점과 평균구하기 -->
+
+<body>
+    <script>
+        //1. 
+        //var score = [
+        //     [95, 88, 76, 64, 73, 85, 45]  //1반
+        //     , [78, 63, 57, 86, 88, 74] //2반
+        //     , [77, 88, 85, 92, 75, 57, 87] //3반
+        //     , // 마지막 , 는 해도되고 안해도되고
+        // ];
+
+        //2. 
+        var score=new Array(
+              Array(95, 88, 76, 64, 73, 85, 45)
+            , Array(78, 63, 57, 86, 88, 74)
+            , Array(77, 88, 85, 92, 75, 57, 87)
+        )
+
+        document.write("score의 갯수: " + score.length + "<br>")
+        document.write("score의 0행의 갯수: " + score[0].length + "<br>")
+        document.write("score의 0행의 갯수: " + score[1].length + "<br>")
+        document.write("score의 0행의 갯수: " + score[2].length + "<br>")
+
+        var tot;
+        var ave;
+
+
+        for (var i = 0; i < score.length; i++) {
+            tot = 0;
+            ave = 0;
+
+            for (var z = 0; z < score[i].length; z++) {
+                tot += score[i][z];
+            }
+            document.write("<br>" + (i + 1) + "반(" + score[i].length + "명) 총점 / 평균 <br>")
+            ave = (tot / score[i].length);
+            document.write(tot + "점 / " + ave.toFixed(2) + "점<br>")
+        }
+        document.write("-----------------------------<br>")
+        document.write("-----------------------------<br>")
+
+
+ 
+        for (var i in score) {
+            tot = 0;
+            ave = 0;
+            for (var z in score[i]) {
+                tot += score[i][z];
+            }
+            document.write("<br>" + (Number(i) + 1) + "반(" + score[i].length + "명) 총점 / 평균 <br>")
+            ave = (tot / Number(score[i].length));
+            document.write(tot + "점 / " + ave.toFixed(2) + "점<br>")
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가위바위보</title>
+
+    <style>
+        .con{margin: 0 auto;}
+        .me{text-align: center;}
+        img{width: 150px; height: 150px; display: inline-block; text-align: center;}
+        p{text-align: center;}
+      
+     
+    </style>
+</head>
+  
+
+<body>
+<div class="con">
+    
+   
+    
+    <input type="button" value="GO" onclick="go();">
+    
+    <div class="me">
+        <img src="img/1.png">
+    </div>
+    <div class="com">
+        <img src="img/1.png">
+    </div>
+
+    <script>
+
+        var cnt = 0;
+        var win = 0;
+        var lose = 0;
+
+        function go(){
+       
+            var game = prompt((cnt+1) + "번째! 가위, 바위, 보 중 무엇을 선택하시겠습니까?", "")
+            if (game == null) {
+                break;
+            }
+            var gameNum;
+            switch (game) {
+                case "가위": gameNum = 1; break;
+                case "바위": gameNum = 2; break;
+                case "보": gameNum = 3; break;
+                default: alert("잘못입력하셨습니다.");
+            }
+          
+            var com = Math.ceil((Math.random() * 2) + 1);
+            }
+
+            if (gameNum == com) {
+                document.write("<div class='me'><img src='img/"+gameNum+".png'><img src='img/4.png'>")
+                document.write("<img src='img/"+com+".png'></div>")
+                document.write("<p>비겼습니다.</p>")
+                cnt++
+            } else if (gameNum == 1) {
+                document.write("<div class='me'><img src='img/"+gameNum+".png'><img src='img/4.png'>")
+                cnt++
+                if (com == 3) {
+                    document.write("<img src='img/"+com+".png'></div><br>");
+                    document.write("<p>졌습니다.</p>");
+                    lose++;
+                }
+                else {
+                    document.write("<img src='img/"+com+".png'></div><br>");
+                    document.write("<p>이겼습니다.</p>")
+                    win++
+                }
+            } else if (gameNum == 2) {
+                document.write("<div class='me'><img src='img/"+gameNum+".png'><img src='img/4.png'>")
+                cnt++
+                if (com == 1) {
+                    document.write("<img src='img/"+com+".png'></div><br>");
+                    document.write("<p>졌습니다.</p>");
+                    lose++
+                }
+                else {
+                    document.write("<img src='img/"+com+".png'></div><br>");
+                    document.write("<p>이겼습니다.</p>")
+                    win++
+                }
+
+            } else if (gameNum == 3) {
+                document.write("<div class='me'><img src='img/"+gameNum+".png'><img src='img/4.png'>")
+                cnt++
+                if (com == 2) {
+                    document.write("<img src='img/"+com+".png'></div><br>");
+                    document.write("<p>졌습니다.</p>");
+                    lose++
+                }
+                else {
+                    document.write("<img src='img/"+com+".png'></div><br>");
+                    document.write("<p>이겼습니다.</p>")
+                    win++
+                }
+            }
+
+        
+
+        document.write("<p>"+cnt + "전 " + win + "승 " + lose + "패 " + (cnt - win - lose) + "무</p>")
+    
+
+
+
+    </script>
+    </div>
+</body>
+
+</html>
