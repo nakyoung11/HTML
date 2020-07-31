@@ -1,12 +1,34 @@
+  
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>잭팟게임</title>
 </head>
 <style>
-    .container{width: 650px; margin: 30px auto;}
+    .container {
+        width: 650px;
+        margin: 30px auto;
+        height: 650px;
+        border: 1px solid black;
+        border-radius: 20px;
+    }
+    .info{text-align: center; height: 30%;}
+    .container h1{text-align: center;}
+    .d{ width: 80%; height:80%;margin: 10px auto;}
+    .d1, .d2, .d3{display: inline-block}
+    .L{font-size:larger; color: brown; font-weight: bold;}
+    .pan{background-color:black; height: 50px; color: rgb(255, 255, 255);}
+    form{margin: 20px;}
+    button{background-color: rgb(231, 255, 13);border: none;height: 20px;border-radius: 10px;}
+    input{ margin-top: 15px; }
+    .pan p{color: rgb(255, 250, 242);}
+    #result{font-size: x-large; color: crimson;}
+ 
+
+
 </style>
 <!--
     1. 배팅금액을 입력하지 않으면 경고! 
@@ -16,56 +38,102 @@
     5. 배팅결과를 주사위 이미지 아래에 출력한다. 
     6. 돈은 천단위 구분 기호를 출력하도록 한다. 
     7. 배팅금액의 입력상자는 빈 문자열로 리셋 되도록 한다.  -->
+
 <body>
     <div class="container">
         <h1>잭팟</h1>
         <div class="info">
-            <p>주사위를 던져주세요.</p>
-            <p>같은 숫자가 3개면 배팅금액의 10배! 2개가 일치하면 베팅금액의 2배를 드립니다.</p>
-            <p>배팅금액을 입력하고 Play버튼을 누르면 시작!<p>
-            <label for="">배팅금액</label>
-            <input type="text" id='money'>
-            <button type="reset">paly</button>
-            <table>
-                <tr>
-                    <td id="dice1"><img src="imgs/dice_info.png"> </td>
-                    <td id="dice2"><img src="imgs/dice_info.png"> </td>
-                    <td id="dice3"><img src="imgs/dice_info.png"> </td>
-                </tr>
-                
-            </table>
+          <p>같은 숫자가 3개면 배팅금액의 <span class="L">10배!</span> </p>
+          <p>2개가 일치하면 배팅금액의  <span class="L">2배</span>를 드립니다.</p>
+            <p>
+              <div class="pan">
+            <form name="input">
+                <label for="money">배팅금액</label>
+                <input type="text" id='money'>
+                <button type="reset" onclick="go()">paly</button><p><span id="user">0</span>배팅 </p></form>
+            </div>
+            
+            <div class="d">
+            <div class="d1"> <img src="" id="dice1"> </div>
+            <div class="d2"> <img src="" id="dice2"> </div>
+            <div class="d3"> <img src="" id="dice3"> </div>
+
+           </div>
+            <p> <span id="result"></p>
 
         </div>
     </div>
     <script>
-       
-       function Dice(){
-            
-            this.num= function(){
-             return (Math.ceil((Math.random() * 5) + 1))
-            }
-            this.diceImg=function(){
-                return "<img src='imgs/dice_"+ this.num()+".png'>"
-            }
+
+        function Dice() {
+            var i = (Math.ceil((Math.random() * 5) + 1))
+            this.num = i;
+            this.diceImg = "imgs/dice_" + i + ".png"
         }
 
-        
-        var dice1=new Dice(); // console.log(dice1.num())
-        var dice2=new Dice(); // console.log(dice2.num())
-        var dice3=new Dice(); // console.log(dice3.num())
-        var urMoney= document.querySelector("#money").value;
-        var reset;
-        if(dice1.num()==dice2.num()==dice3.num()){
-            reset= urMoney*10;
-            
-        }else if(dice1.num()==dice2||dice1.num()==dice3.num()||dice2.num()==dice3.num()){
-            reset= urMoney*2;
-        }else{ reset= 0}
+        function go() {
+           // anime();
+            //주사위 숫자생성 
+            var dice1 = new Dice(); console.log(dice1.num);
+            var dice2 = new Dice(); console.log(dice2.num);
+            var dice3 = new Dice(); console.log(dice3.num);
+
+            //주사위 번호 입력
+            document.querySelector("#dice1").setAttribute('src', dice1.diceImg)
+            console.log(dice1.diceImg)
+            document.querySelector("#dice2").setAttribute('src', dice2.diceImg)
+            console.log(dice2.diceImg)
+            document.querySelector("#dice3").setAttribute('src', dice3.diceImg)
+            console.log(dice3.diceImg)
 
 
-        
+            var urMoney = document.querySelector("#money").value;
+
+
+
+
+
+
+
+            document.querySelector('#user').innerHTML = urMoney
+            if (dice1.num == dice2.num && dice1.num == dice3.num) {
+                btMoney = + (urMoney * 10) +" 원을 획득하셨습니다. "
+
+                document.querySelector('#result').innerHTML = btMoney;
+            } else if (dice1.num == dice2.num || dice1.num == dice3.num || dice2.num == dice3.num) {
+                btMoney = urMoney * 2;
+                document.querySelector('#result').innerHTML = 
+                 + btMoney +" 원을 획득하셨습니다. "
+            } else
+                document.querySelector('#result').innerHTML = "꽝!"
+
+        }
+
+        // function anime(){
+        //     var n = 6;
+        //     for(var i=1; i<=n; i++){
+              
+        //         setTimeout(function() {
+        //         document.querySelector("#dice1").setAttribute('src', 'imgs/dice_' + i + '.png')
+        //         document.querySelector("#dice2").setAttribute('src', 'imgs/dice_' + i + '.png')
+        //         document.querySelector("#dice3").setAttribute('src', 'imgs/dice_' + i + '.png')
+               
+        //         }, 1000);
+               
+        //     }
+           
+       // }
+
+
+
+
+
+
+
+
 
 
     </script>
 </body>
+
 </html>
