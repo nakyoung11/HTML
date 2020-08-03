@@ -11,6 +11,7 @@
     .container {
         width: 650px;
         margin: 30px auto;
+<<<<<<< HEAD
         height: 650px;
         border: 1px solid black;
         border-radius: 20px;
@@ -29,6 +30,9 @@
  
 
 
+=======
+    }
+>>>>>>> 280ccbd1dcd0a1e21faacb1dd0c87c0fb8eef9c6
 </style>
 <!--
     1. 배팅금액을 입력하지 않으면 경고! 
@@ -43,6 +47,7 @@
     <div class="container">
         <h1>잭팟</h1>
         <div class="info">
+<<<<<<< HEAD
           <p>같은 숫자가 3개면 배팅금액의 <span class="L">10배!</span> </p>
           <p>2개가 일치하면 배팅금액의  <span class="L">2배</span>를 드립니다.</p>
             <p>
@@ -54,12 +59,29 @@
             </div>
             
             <div class="d">
+=======
+            <p>주사위를 던져주세요.</p>
+            <p>같은 숫자가 3개면 배팅금액의 10배! 2개가 일치하면 배팅금액의 2배를 드립니다.</p>
+            <p>배팅금액을 입력하고 Play버튼을 누르면 시작!
+            <p>
+            <form name="input">
+                <label for="money">배팅금액</label>
+                <input type="text" id='money'>
+                <button type="reset" onclick="go()">paly</button></form>
+
+            <p><span id="user">0</span>배팅 </p>
+>>>>>>> 280ccbd1dcd0a1e21faacb1dd0c87c0fb8eef9c6
             <div class="d1"> <img src="" id="dice1"> </div>
             <div class="d2"> <img src="" id="dice2"> </div>
             <div class="d3"> <img src="" id="dice3"> </div>
 
+<<<<<<< HEAD
            </div>
             <p> <span id="result"></p>
+=======
+           
+            <p> <span id="result">0</span>원 획득</p>
+>>>>>>> 280ccbd1dcd0a1e21faacb1dd0c87c0fb8eef9c6
 
         </div>
     </div>
@@ -72,7 +94,10 @@
         }
 
         function go() {
+<<<<<<< HEAD
            // anime();
+=======
+>>>>>>> 280ccbd1dcd0a1e21faacb1dd0c87c0fb8eef9c6
             //주사위 숫자생성 
             var dice1 = new Dice(); console.log(dice1.num);
             var dice2 = new Dice(); console.log(dice2.num);
@@ -86,6 +111,7 @@
             document.querySelector("#dice3").setAttribute('src', dice3.diceImg)
             console.log(dice3.diceImg)
 
+<<<<<<< HEAD
 
             var urMoney = document.querySelector("#money").value;
 
@@ -98,10 +124,17 @@
             document.querySelector('#user').innerHTML = urMoney
             if (dice1.num == dice2.num && dice1.num == dice3.num) {
                 btMoney = + (urMoney * 10) +" 원을 획득하셨습니다. "
+=======
+            var urMoney = document.querySelector("#money").value;
+            document.querySelector('#user').innerHTML = urMoney
+            if (dice1.num == dice2.num && dice1.num == dice3.num) {
+                btMoney = urMoney * 10;
+>>>>>>> 280ccbd1dcd0a1e21faacb1dd0c87c0fb8eef9c6
 
                 document.querySelector('#result').innerHTML = btMoney;
             } else if (dice1.num == dice2.num || dice1.num == dice3.num || dice2.num == dice3.num) {
                 btMoney = urMoney * 2;
+<<<<<<< HEAD
                 document.querySelector('#result').innerHTML = 
                  + btMoney +" 원을 획득하셨습니다. "
             } else
@@ -124,6 +157,14 @@
            
        // }
 
+=======
+                document.querySelector('#result').innerHTML = btMoney;
+            } else
+                document.querySelector('#result').innerHTML = 0
+
+        }
+
+>>>>>>> 280ccbd1dcd0a1e21faacb1dd0c87c0fb8eef9c6
 
 
 
