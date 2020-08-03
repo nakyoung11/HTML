@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>도서관리 시스템</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    /*찾아보기*/
+    .container {
+        width: 600px;
+        margin: 30px auto;
+    }
+
+    .container h2 {
+        text-align: center;
+    }
+
+    .container form {
+        background-color: rgb(90, 24, 165);
+        text-align: center;
+        padding: 30px 40px;
+        color: ghostwhite;
+        border-radius: 10px 10px 0px 0px;
+    }
+
+    form input {
+        font-size: smaller;
+        width: 100px;
+        height: 35px;
+        border: none;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    button {
+        border: none;
+        height: 30px;
+        background-color: rgb(240, 225, 22);
+        border-radius: 10px;
+        box-shadow: 0px 5px 0px 0px rgb(124, 124, 99);
+        cursor: pointer;
+    }
+
+    button:focus {
+        outline: none;
+    }
+
+    button:hover {
+        background-color: rgb(245, 232, 196);
+        box-shadow: none;
+        font-weight: bold;
+    }
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    ul li {
+        background-color: rgb(205, 225, 231);
+        font-size: 1.1em;
+        transition-delay: 0.2s;
+        padding: 10px 10px 10px 30px;
+    }
+
+    ul li:nth-child(odd) {
+        background-color: rgb(143, 195, 212)
+    }
+
+    ul li:hover {
+        background-color: rgba(192, 196, 174, 0.377);
+        font-weight: bold;
+    }
+
+    .close, .close2 {
+        float: right ; cursor: pointer;
+    }
+
+    img {
+        width: 30px;
+        height: 30px;
+       
+    }
+
+</style>
+
+<!--
+
+  1.  이벤트: 웹브라우저와 HTML 문서와 사용자 사이의 상호작용에 의해서 발생하는 일!
+    이벤트가 발생하면 웹 브라우저는 이 사실을 자바스크립트에게 알려주어 이벤트에 대한 적절한 처리를 함>
+    =종류(마우스): click, dbclick, mouseover, mouseoutm, mousemove, mousedown, mouseup  <- 마우스
+    =종류(키보드): keypress(키 누름), keyup(키를 놓음), keydow(키 입력)
+    =종류(form): change, focus, blur(초점을 잃음) select...accent
+    =종류(윈도우): load, unload, resize  
+  2. 이벤트 리스너(Event listner, event handler)이벤트를 다루는 것
+     이벤트가 발생했을 때 실행되는 함수
+-->
+
+<body>
+
+    <div class="container">
+        <h2>도서 목록 관리</h2>
+        <form>
+            <!--form안의 내용을 페이지로 전달 -->
+            <input type="text" id="title" autofocus>
+            <input type="text" id="author">
+            <input type="text" id="volume">
+            <input type="text" id="price">
+            <button id="add" class="addBtn" >추가</button>
+        </form>
+
+        <div id="itemList"></div>
+
+
+
+    </div>
+
+
+    <script>
+        function Book(title, author, volume, price) {
+            this.title = title;
+            this.author = author;
+            this.volume = volume;
+            this.price = price;
+        }
+
+        Book.prototype.showinfo = 
+            function () {
+            return "제목: " + this.title + "\n 저자: " + this.author + "\n페이지: " + this.volume + "\n가격: " + this.price;
+
+        }
+
+       var itemList=[]//책정보 빈배열
+
+        var addBtn = document.querySelector("#add"); //버튼 아이디
+        addBtn.addEventListener("click", addList); //클릭했을때 addList실행 //클릭에 대한 리스너
+
+        //이벤트 함수(이벤트 발생)
+        function addList() {
+            var title = document.querySelector("#title").value;
+            var author = document.querySelector("#author").value;
+            var volume = document.querySelector("#volume").value;
+            var price = document.querySelector("#price").value;
+
+            if(title==0){
+                alert("타이틀을 입력해주세요.")
+
+            }else if(author==0){
+                alert("저자를 입력해주세요.")
+            }else if(volume==0){
+                alert("페이지를 입력해주세요.")
+            }else if(price==0){
+                alert("가격을 입력해주세요.")
+            }else{
+                
+            //배열에 넣음
+           itemList.push(new Book(title, author,volume,price));
+           document.querySelector("#title").value = "";
+           document.querySelector("#author").value = "";
+           document.querySelector("#price").value = "";
+           document.querySelector("#volume").value = "";
+           document.querySelector("#title").focus(); //??            
+            
+          event.preventDefault(); //from의 기본특성을 막기
+            showList()
+            }
+
+        }
+        //배열을 li로 나열
+        function showList() {
+            var list = "<ul>";
+            for (var i = 0; i < itemList.length; i++) {
+                list += "<li>" + itemList[i].title + "<span class='close' id='" + i + "'> 책정보 </span>"+
+                 "<span class='close2' id=" + i + "> <img src='/Test/imgs/del.png'> </span>" + "</li>";
+            }
+
+            list += "</ul>"
+
+            document.querySelector("#itemList").innerHTML = list;
+
+// .close
+            var removeList = document.querySelectorAll(".close2")
+
+            for (var i = 0; i < removeList.length; i++) {
+                removeList[i].addEventListener("click", removeItem);
+            }
+
+
+            var bookList = document.querySelectorAll(".bookInfo")
+
+            for (var i = 0; i < bookList.length; i++) {
+                bookList[i].addEventListener("click", showBookInfo);
+            }
+        }
+
+
+
+        function removeItem() {
+            var id = this.getAttribute("id") // id속성 저장
+            itemList.splice(id, 1); //ID중에 선택된 id
+            showList();
+        }
+
+        function showBookInfo(){
+            var id= this.getAttribute("id")
+            alert(itemList[id].showInfo);
+        }
+
+
+    </script>
+
+</body>
+
+</html>

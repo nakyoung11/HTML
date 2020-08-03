@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>여행준비물  점검 목록</title>
+</head>
+<style>
+    *{box-sizing: border-box;} /*찾아보기*/
+    .container{width: 600px; margin: 30px auto;}
+    .container h2{text-align: center; }
+    .container form{background-color: rgb(24, 130, 165);text-align: center; padding: 30px 40px; color: ghostwhite;
+        border-radius: 10px 10px 0px 0px;}
+    form input{font-size: smaller; width: 450px; height: 35px;  border: none; margin-left: 10px; margin-right: 10px;
+    }
+    button{border: none; height: 30px; background-color: rgb(216, 125, 170); border-radius: 10px; 
+    box-shadow: 0px 5px 0px 0px rgb(118, 99, 124);cursor: pointer;}
+    button:focus{outline: none;}
+    button:hover{background-color: rgb(214, 184, 214); box-shadow: none; font-weight: bold;}
+    ul{list-style: none; margin: 0; padding: 0;}
+    ul li{background-color: rgb(205, 225, 231); font-size: 1.1em; transition-delay: 0.2s;
+     padding: 10px 10px 10px 30px;}  
+    ul li:nth-child(odd){background-color:rgb(143, 195, 212)}
+    ul li:hover{background-color: rgba(192, 196, 174, 0.377); font-weight: bold;} 
+    .close{float:right }
+    img{width: 30px;height: 30px; cursor: pointer;}
+    
+</style>
+
+<!--
+
+  1.  이벤트: 웹브라우저와 HTML 문서와 사용자 사이의 상호작용에 의해서 발생하는 일!
+    이벤트가 발생하면 웹 브라우저는 이 사실을 자바스크립트에게 알려주어 이벤트에 대한 적절한 처리를 함>
+    =종류(마우스): click, dbclick, mouseover, mouseoutm, mousemove, mousedown, mouseup  <- 마우스
+    =종류(키보드): keypress(키 누름), keyup(키를 놓음), keydow(키 입력)
+    =종류(form): change, focus, blur(초점을 잃음) select...accent
+    =종류(윈도우): load, unload, resize  
+  2. 이벤트 리스너(Event listner, event handler)이벤트를 다루는 것
+     이벤트가 발생했을 때 실행되는 함수
+-->
+<body>
+   
+    <div class="container">
+         <h2>여행 준비물 점검 목록</h2>
+        <form> <!--form안의 내용을 페이지로 전달 -->
+        <input type="text" id="item" autofocus>
+        <button id="add" class="addBtn">추가</button> 
+
+         </form>
+     
+     <div id="itemList"></div>
+
+
+
+    </div>
+
+
+    <script>
+        var itemList=[]; //준비물을 추가할 빈 배열 
+
+        var addBtn=document.querySelector("#add"); //버튼 아이디
+        addBtn.addEventListener("click", addList); //클릭했을때 addList실행 //클릭에 대한 리스너
+
+        //이벤트 함수(이벤트 발생)
+        function addList(){
+            var item=document.querySelector("#item").value;
+            if(item!=null){ 
+                itemList.push(item);
+                document.querySelector("#item").value="";
+                document.querySelector("#item").focus(); //??            
+             }
+              event.preventDefault(); //from의 기본특성을 막기
+              showList()
+        }
+        //배열을 li로 나열
+        function showList(){
+            var list ="<ul>";
+            for(var i= 0; i<itemList.length;i++){
+                list += "<li>"+itemList[i]+ "<span class='close' id="+ i +"> <img src='/Test/imgs/del.png'> </span>" +"</li>";
+            }    
+
+            list+="</ul>"
+
+            document.querySelector("#itemList").innerHTML =list;
+
+            var removeList=document.querySelectorAll(".close")
+
+            for(var i=0; i<removeList.length ; i++){
+                removeList[i].addEventListener("click",removeItem);
+            }
+        }
+
+        function removeItem(){
+            var id=this.getAttribute("id") // id속성 저장
+            itemList.splice(id,1); //ID중에 선택된 id tkrwp
+            showList();
+        }
+
+
+    </script>
+  
+</body>
+</html>

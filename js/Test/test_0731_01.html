@@ -5,9 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>밀리의 서재</title>
     <style>
-        .container {width:500px; margin: 30px auto; border: 1px solid black; text-align: center;}
-        li h3{ display:inline-block;}
-        #list li {list-style-type: none;}
+        
+        .intro{text-align: center; background-color: rgba(240, 224, 205, 0.486);}
+    
+        ul  {
+           list-style: none; text-align: center;} 
+     
+
+       li {display: inline-block;}       
+       .title{ height: 100px;width: 150px; background-color: yellow; 
+       margin: 10px; margin: 0px; margin-left: 30px; border-radius: 10px 10px 0px 0px;
+       padding: 35px 0px 0px  0px} 
+       .but{height: 300px; width: 150px; 
+        margin: 0px; margin-left: 30px;margin-bottom: 20px; background-color: purple;
+        padding: 100px 0px 0px  0px;
+        border-radius: 0px 0px 10px 10px;}
+        
+       button{background-color: rgb(255, 249, 249);border: none; border-radius: 5px; margin: 5px;
+       height: 25px;}                
     </style>
 </head>
 <body>
@@ -45,7 +60,7 @@
         var str="";
 
         for(var i=0; i<book.length; i++){
-            str += "<li><h3>"+book[i].title+"</h3> <button onclick='confirm(" + i + ")' id='c" +i +"'>확인</button> <button id='delete'>삭제</button></li>"
+            str += "<li class='"+i+"'><div class='title'><h3>"+book[i].title+"</h3></div><div class='but'> <button onclick='confirm(" + i + ")' id='c" +i +"'>확인</button> <button id='delete'>삭제</button></div></li>"
         }
 
         document.querySelector('#list').innerHTML = str;

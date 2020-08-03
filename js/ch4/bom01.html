@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    
+</style>
+<body>
+    <!--
+        1. BOM 객체(browser Object Model)
+        - 웹 브라우저에서  HTML을 로드하면, 현재 웹 브라우저와 관련된 모든 정보를 객체로 표현해서 제공
+        - 최상위 객체인 window 객체 아래의 scree, location, history, navigator...
+        2. DOM 객체(Document Object Model)
+        - 웹브라우저에 로드된 HTML을 자바 스크립트에서 사용 할 수 있도록 개체로 제공하는 것. 
+        - 최 상위 객체인 window의 하위 객체 중에서 document 객체와 그 하위 객체들로 모델링되어 표현됨 
+        --->
+ 
+</body>
+
+<div class="container">
+    <h3>새 윈도우 열기 밑 닫기</h3>
+    <button onclick="w1=window.open()">빈윈도우 열기</button>
+    <button onclick="w1.close()">윈도우 닫기</button><br>
+    <button onclick="w2=window.open('','win2')">window2열기 </button>
+    <button onclick="w2.close()">window2 닫기 </button><br>
+    <button onclick="w3=window.open('http://www.easyspub.com','win3','width=650, height=400, left=500, scrollbars= no')">window3열기 </button><!--크기지정-->
+    
+    <button onclick="w3.close()">window2 닫기 </button><br>
+
+
+
+</div>
+</html>
