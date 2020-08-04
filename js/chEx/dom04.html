@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom객체</title>
+</head>
+<style>
+    .container{width: 500px; }
+    img{width: 250px; height: 250px; }
+    
+</style>
+
+<!--버튼을 누르면 불끄고 켜기 -->
+<body>
+    <div class="container">
+        <h3>전구 점등 / 소등</h3>
+        <hr>
+        <button id="btnLight" >점등</button>
+       
+        <hr>
+        <img src="img/lightoff.png" id="light">
+    </div>
+
+<script>
+
+
+var btnLight=document.querySelector("#btnLight");
+var imgLight=document.querySelector("#light");
+btnLight.addEventListener("click", changeLight);
+
+function changeLight(){
+    if(btnLight.innerHTML=="점등"){ //점등일때 
+        imgLight.src="img/lighton.png";
+        btnLight.innerHTML="소등"
+        btnLight.setAttribute("style","background-color:red")
+
+    }else{
+        imgLight.src="img/lightoff.png";
+        btnLight.innerHTML="점등"
+        btnLight.setAttribute("style","background-color:gray")
+    }
+}
+
+
+
+
+</script> 
+
+</body>
+</html>

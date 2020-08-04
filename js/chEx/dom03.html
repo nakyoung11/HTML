@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom객체</title>
+</head>
+<style>
+    .container{width: 500px; }
+    img{width: 250px; height: 250px;}
+</style>
+
+<!--버튼을 누르면 불끄고 켜기 -->
+<body>
+    <div class="container">
+        <h3>전구 점등 / 소등</h3>
+        <hr>
+        <button id="on" >점등</button>&nbsp;&nbsp;&nbsp;
+        <button id="off">소등</button>
+        <hr>
+        <img src="img/lightoff.png" id="light">
+    </div>
+
+<script>
+
+var btnOn=document.getElementById("on");
+btnOn.addEventListener("click", changeOn);
+
+var btnOff=document.getElementById("off");
+btnOff.addEventListener("click", changeOff);  
+
+var img=document.getElementById("light")
+
+function changeOn(){
+    img.src="img/lighton.png"
+}
+
+function changeOff(){
+    img.src="img/lightoff.png"
+}
+
+
+
+
+//  function lon(){
+//      document.getElementById("light").src="img/lighton.png"
+
+//  }
+//  function loff(){
+//      document.getElementById("light").src="img/lightoff.png"
+//  }
+
+
+
+
+
+</script> 
+
+</body>
+</html>

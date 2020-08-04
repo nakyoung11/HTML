@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom 2</title>
+</head>
+<style> 
+.container{width: 500px; margin: 0 auto;}
+/* #img{width: 70px;}
+#text1{background-color: burlywood;} */
+
+
+</style>
+  
+<body>
+    <div class="container">
+        <img src="" id="img1">
+        <p id="text1"></p>
+
+    </div>
+
+    <script>
+        var img1=document.querySelector("#img1") //ID값이 img1인 요소를 찾음
+        img1.src="img/js.PNG" //요소의 내용을 변경
+        img1.style.width="140px" //요소의 스타일 속성을 변경
+        img1.style.height="70px" //요소의 스타일 속성을 변경
+
+        var text1=document.querySelector("#text1") //ID값이 text1인 요소를 찾음
+        text1.innerHTML="자바스크립트" //요소의 내용변경
+        text1.style.background="burlywood"; // 요소의 스타일 속성변경
+    </script>
+</body>
+</html>

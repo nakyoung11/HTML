@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>페이지2</title>
+</head>
+<body>
+    <div class="container">
+    <h3>페이지 2</h3> <hr>
+    <p>두번째 페이지입니다. </p>
+    <!-- <button onclick="location.href='page1.html'">이전페이지</button> -->
+    <!-- <button onclick="history.back()">이전페이지</button> 이전 페이지로(3페이지에서 왔다면 3페이지로) -->
+    <button onclick="history.go(-1)">이전페이지</button>
+
+    <!-- <button onclick="location.href='page3.html'">다음페이지</button> -->
+    <button onclick="location.assign('page3.html')">다음페이지</button> <!--메소드 방식-->
+</div>
+</body>
+</html>

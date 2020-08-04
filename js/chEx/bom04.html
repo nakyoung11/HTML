@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>window 객체</title>
+</head>
+<style>
+    .container{width: 500px; margin: 0 auto;}
+</style>
+<body>
+    <div class="container">
+        <h2>윈도우 창 열기/닫기(크기, 위치 조절)</h2>
+        <button id="openBtn">창열기</button>
+        <button>창닫기</button>
+
+    </div>
+    <script>
+        var openBtn=document.querySelector("#openBtn")
+        openBtn.addEventListener("click",openWin)
+        var sw=screen.width/2; //모니터의 절반크기
+        var sh=screen.height/2;
+
+        var h1= screen.width/2-sw/2
+        var v1= screen.height/2-sh/2
+
+        var ss='width='+sw+', height='+sh+', top='+h1+', left='+v1+''
+
+        function openWin(){
+            window.open('http://www.naver.com','',ss)
+        }
+    </script>
+
+</body>
+</html>
