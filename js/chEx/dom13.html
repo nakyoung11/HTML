@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+ .imgs img{height: 150px;}
+</style>
+<!--
+    DOM객체의 반환 메소드 
+    1. getElementid()- 지정된 id속상값을 가진 요소의 첫번째 요소값을 반환한다.  
+    2. getElementsByName()- 지정된 name 속성값을 가진 요소 객체들을 반환
+    3. getElementsByClassName()-  지정된 class속성값을 가진 요소객체들을 반환
+    4. getElementsByTagName()- 지정된 Tag명을 가진 요소객체들을 반환
+
+
+
+    5. querySelector()- 지정된 CSS선택자를 만족하는  첫번째 요소객체를 반환  
+    6. querySelectorAll)()- 지정된 CSS선택자를 만족하는 모든 요소객체들을 반환
+
+    1개 찾음- 1, 5
+    여러개 찾음- 나머지
+
+
+    //예제 안멈춤
+
+-->
+
+<body>
+    <div class="container">
+        <h3>이미지 이동하는 애니메이션 효과</h3>
+        <div class="imgs" id="img">
+            <img src="img/f1.png">
+            <img src="img/f2.png">
+            <img src="img/f3.png">
+            <img src="img/f4.png">
+            <img src="img/f5.png">
+            <img src="img/f6.png">
+            <img src="img/f7.png">
+        </div>
+
+        <hr>
+        <button onclick="setInterval(moveImg, 500)">움직여랏!</button>
+        <button onclick="stop">멈춤</button>
+    </div>
+
+    <script>
+        var img=document.querySelector("#img")
+         //img태그 전체를 받음 -배열로 
+
+        var btn1=document.getElementById("btn1")
+        //btn1.addEventListener("click",moveImg)
+        
+
+       function moveImg(){
+          var imgTags = document.querySelectorAll("img")         
+          
+           var movingImg=imgTags[0] //1번째 그림
+           img.removeChild(movingImg);
+           img.appendChild(movingImg);
+        }
+
+        function stop(){
+         clearInterval(moveImg) ;  
+        }
+
+
+    </script>
+    
+</body>
+</html>

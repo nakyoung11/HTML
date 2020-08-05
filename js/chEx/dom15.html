@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h2>웹프로그래밍</h2>
+        <ul id="p1">프론트엔드 프로그래밍<li>HTML</li><li>css</li><li>javascript</li></ul>
+
+        <ul id="p2">백엔드 프로그래밍  <!--0-->
+            <li>java</li>
+            <li>jsp</li>
+            <li>oracle</li>
+        </ul>
+
+    </div>
+    <script>
+    var p1= document.querySelector("#p1");
+    document.write("프론트 엔드 DOM트리보기 ")
+    document.write("ul태그의 자식 로드" + p1.childNodes.length+"<br>");
+
+    for(var i=0;i<p1.childNodes.length;i++){
+        document.write(i+"자식노드:" + p1.childNodes[i]+"<br>")
+    }
+    document.write("<br><br>-----------------------------------<br><br> ")
+
+
+    var p2= document.querySelector("#p2");
+    document.write("백엔드 프로그래밍 DOM트리보기 ")
+    document.write("ul태그의 자식 로드" + p2.childNodes.length+"<br>");
+
+    for(var i=0;i<p2.childNodes.length;i++){
+        document.write(i+"자식노드:" + p2.childNodes[i]+"<br>")
+    }
+    
+    </script>
+</body>
+</html>
