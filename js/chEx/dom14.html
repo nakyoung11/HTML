@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom 객체의 컬렉션 객체</title>
+</head>
+<style>
+</style>
+<!--
+    dom객체의 컬렉션 객체
+    -HTMl에서 많이 사용되는 태그 요소들에 대해서 모든 요소들이 순차적으로 접근 할 수 있도록 
+     컬렉션 객체로 만들어 놓은 것, 배열
+
+    -a 태그: anchors[]
+    -img태그: images[]
+    -form태그: forms[]
+    -form태그의 자식요소: elements[]
+-->
+<body>
+
+    <div class="contaienr">
+
+        <form action="" name="sutInfo">
+            학과: <input type="text" name="major"><br>
+            이름: <input type="text" name="sname">           
+
+        </form>
+
+        <form action="" name="q1">
+            <p>Q1.당신은 어디부터 씻습니까? </p>
+            <input type="radio" name="p1" value="1"> 머리부터 감는다.
+            <input type="radio" name="p1" value="2"> 세수부터 한다
+            <input type="radio" name="p1" value="3"> 몸부터 씻는다.
+            <input type="radio" name="p1" value="4"> 이를 닦는다.
+        </form>
+        
+        
+        <form action="" name="q2">
+            <p>Q2.마음에 드는 이성을 공원에서 만난 당신!
+                그 혹은 그녀에게 풍선을 전해주고 싶습니다.
+                어떤 색 풍선을 건내줄건가요? </p>
+            <input type="radio" name="p2" value="1"> 빨강
+            <input type="radio" name="p2" value="2"> 파랑
+            <input type="radio" name="p2" value="3"> 노랑
+            <input type="radio" name="p2" value="4"> 흰색
+        </form>
+
+        
+        <form action="" name="q3">
+            <p>Q3.씨앗을 심어서 꽃이 필 때까지 열심히 가꾼 당신.
+                어떤 꽃이 나왔습니까?</p>
+            <input type="radio" name="p3" value="1"> 튤립
+            <input type="radio" name="p3" value="2"> 팬지
+            <input type="radio" name="p3" value="3"> 장미
+            <input type="radio" name="p3" value="4"> 꽃이 시들었다 or 피지 않았다. 
+        </form>
+
+        <hr>
+        <button id="btn1">결과보기</button>
+        <span id="result"></span>
+
+    </div>
+    
+    <script>
+        var result=document.querySelector("#result");
+        var btn1= document.querySelector("#btn1")
+
+
+        btn1.addEventListener("click",simResult)
+
+        function simResult(){
+            var answer=[ ]
+        }
+
+
+
+    </script>
+    
+</body>
+</html>

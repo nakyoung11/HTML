@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>애니메이션 효과 구현</title>
+<style>
+.container{width: 500px; margin: 0 auto; margin: 0 auto;}
+.c{width: 250px; border:rgb(194, 192, 192) 5px solid; background-color: rgb(194, 192, 192); margin: 0 auto;}
+#clock{background-color: rgb(36, 41, 41); color: white; text-align: center; padding: 10px; margin: 10px;}
+</style>
+</head>
+<body>
+    <div class="container">
+        <h2 style="text-align: center;">디지털 시계</h2>
+            <div class="c">
+              <h1 id="clock"></h1>
+            </div>
+    </div>
+
+
+    <script>
+        var clock=document.getElementById("clock")
+       
+        function changeT(){
+             var date = new Date();
+             var hour= date.getHours();
+             var min= date.getMinutes();
+             var send= date.getSeconds();
+
+             clock.innerHTML= hour +" : "+min+" : "+send
+        }
+
+        //changeT() //멈춰있음
+        setInterval(changeT, 1000)
+    </script>
+</body>
+</html>

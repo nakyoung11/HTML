@@ -1,0 +1,99 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom 객체의 컬렉션 객체</title>
+</head>
+<style>
+</style>
+<!--
+    dom객체의 컬렉션 객체
+    -HTMl에서 많이 사용되는 태그 요소들에 대해서 모든 요소들이 순차적으로 접근 할 수 있도록 
+     컬렉션 객체로 만들어 놓은 것, 배열
+
+    -a 태그: anchors[]
+    -img태그: images[]
+    -form태그: forms[]
+    -form태그의 자식요소: elements[]
+-->
+<body>
+
+    <div class="contaienr">
+
+        <form action="" name="sutInfo">
+            학과: <input type="text" name="major"><br>
+            이름: <input type="text" name="sname">           
+
+        </form>
+
+        <!--from[1]-->
+
+        <form action="" name="q1">
+            <p>Q1. 1+1 은 ?</p>
+            <input type="radio" name="p1" value="1"> 1
+            <input type="radio" name="p1" value="2"> 2
+            <input type="radio" name="p1" value="3"> 0
+            <input type="radio" name="p1" value="4"> 3
+        </form>
+        
+        
+        <form action="" name="q2">
+            <p>Q2. 5+1 은? </p>
+            <input type="radio" name="p2" value="1"> 5
+            <input type="radio" name="p2" value="2"> 1
+            <input type="radio" name="p2" value="3"> 6
+            <input type="radio" name="p2" value="4"> 4
+             </form>
+
+        
+        <form action="" name="q3">
+            <p>Q3. 2 X 8 은?</p>
+            <input type="radio" name="p3" value="1"> 2
+            <input type="radio" name="p3" value="2"> 4
+            <input type="radio" name="p3" value="3"> 0
+            <input type="radio" name="p3" value="4"> 16 
+        </form>
+
+        <hr>
+        <button id="btn1">결과보기</button>
+        <span id="result"></span>
+
+    </div>
+    
+    <script>
+        var result=document.querySelector("#result");
+        var btn1= document.querySelector("#btn1")
+
+
+        btn1.addEventListener("click",calScore)
+       
+        function calScore(){ 
+            var sname=document.forms[0].sname.value
+            var answer=[2, 3, 4];//각 문제의 정답
+
+            var choise= new Array();
+            var score=0;
+
+            choise[0]=document.forms[1].p1.value; //1번 문제 
+            choise[1]=document.forms[2].p2.value; //2번 문제
+            choise[2]=document.forms[3].p3.value; //3번 문제
+
+           //학생응답과 정답 비교
+           for(var i=0; i<3;i++){
+            if(choise[i]==answer[i]){
+                score+=10
+            }
+           
+           } result.innerHTML= sname+": "+score+"점"
+        }
+        
+
+
+
+    </script>
+    
+</body>
+</html>

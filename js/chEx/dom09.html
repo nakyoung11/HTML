@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container {
+        width: 600px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <h3>웹브라우저</h3>
+
+        <div id= b1>
+            <img src="img/wb1.PNG">
+            <img src="img/wb2.PNG" id="net">
+            <img src="img/wb3.PNG">
+            <img src="img/wb4.PNG" id="safa">
+            <img src="img/wb5.PNG">
+            <img src="img/wb6.PNG">
+        </div>
+        <hr>
+        <button id="btn1">넷스케이프 삭제</button>&nbsp;&nbsp;
+        <button id="btn2">사파리 대체</button>
+    </div>
+    <script>
+        var btn1= document.getElementById("btn1")
+        var btn2= document.getElementById("btn2")
+
+        btn1.addEventListener("click", deleteNet)
+        btn2.addEventListener("click", replaceSafa)
+
+        function deleteNet(){
+            var net=document.getElementById("net")
+            net.parentNode.removeChild(net)
+           // net.remove() 차이 ??
+        }
+
+        function replaceSafa(){
+            var safa=document.getElementById("safa")
+
+            //사파리 대체이미지 생성
+            var newTag=document.createElement("img")
+            newTag.setAttribute("src","img/wb10.png")
+            newTag.setAttribute("width","55px")
+            newTag.setAttribute("height","55px")
+            
+           safa.parentNode.replaceChild(newTag,safa);
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
