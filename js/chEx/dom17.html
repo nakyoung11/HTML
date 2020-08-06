@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{width: 800px;}
+    </style>
+</head>
+<body>
+    <div class="container">
+    <h2>코리아 대학교 설문조사</h2>
+    <h3>Q1.학생의 학년을 선택해 주세요.</h3>
+    <input type="radio" name="year" value="1">1학년&nbsp;&nbsp;
+    <input type="radio" name="year" value="2">2학년&nbsp;&nbsp;
+    <input type="radio" name="year" value="3">3학년&nbsp;&nbsp;
+    <input type="radio" name="year" value="5">4학년&nbsp;&nbsp;
+    <h3>Q2. 학생이 좋아하는 과목을 선택해 주세요</h3>
+    <input type="checkbox" name=subject value="미국독립사">미국독립사&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="checkbox" name=subject value="한국 근현대사">한국 근현대사&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="checkbox" name=subject value="중국 고대사">중국 고대사<br>
+    <input type="checkbox" name=subject value="고미술의 이해">고미술의 이해&nbsp;&nbsp;
+    <input type="checkbox" name=subject value="조선시대의 양반문화의 이해">조선왕조의 이해&nbsp;&nbsp;&nbsp;
+    <input type="checkbox" name=subject value="프랑스 중세사">프랑스 중세사&nbsp;&nbsp;
+    <hr>
+    <button onclick="inputCom()">입력</button>
+    <div id="result"></div>
+    </div>
+    
+    <script>
+        var years=document.getElementsByName("year");
+        var subjects=document.getElementsByName("subject");
+        var out1=" "
+        var out2=" "
+        var result=document.getElementById("result")
+
+        console.log(years[0])
+
+        function inputCom(){
+         //name이 동일한 radio버튼에서 선택한 값 얻기
+
+        for(var i=0; i<years.length;i++){
+            if(years[i].checked==true){
+                out1=years[i].value;
+            }
+         }
+
+         for(var i=0; i<subjects.length;i++){
+            if(subjects[i].checked==true){
+                out2+=subjects[i].value;
+            }
+         }
+
+         result.innerHTML= out1 + out2
+
+        }
+
+
+
+
+
+    </script>
+</body>
+</html>

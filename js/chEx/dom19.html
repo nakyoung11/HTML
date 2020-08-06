@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>select의 dom객체</title>
+   <style>
+       .container{width: 500px;}
+   </style>
+</head>
+<body>
+    <div class="container">
+        <h2>설문조사</h2>
+        <h3>당신의 취미는?</h3>
+        <select id="subject" multiple>
+            <option value="그림그리기" selected>그림그리기</option>
+            <option value="음악감상">음악감상</option>
+            <option value="영화감상">영화감상</option>
+            <option value="멍때리기">멍때리기</option>
+            <option value="잠자기">잠자기</option>
+        </select>
+<hr>
+<button onclick="selectCom()">선택완료</button>
+<div class="result"></div>
+    </div>
+
+
+    <script>
+        var subject=document.getElementById("subject")
+     
+        var result=document.querySelector(".result")
+
+        function selectCom(){
+               var output=""
+
+            for(var i=0; i<subject.length;i++){
+                if(subject.options[i].selected==true){
+                    output +=subject.options[i].value+" "
+                }
+            }
+
+            result.innerHTML=output
+
+        }
+           
+        
+
+
+
+    </script>
+    
+</body>
+</html>

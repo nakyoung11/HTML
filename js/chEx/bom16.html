@@ -1,0 +1,70 @@
+<!--안해 몰라. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+        <meta charset="UTF-8">
+  
+        <title>Document</title>
+    </head>
+    <!--bom 트리의 요소 선택 속성
+        previousSibling:노드 객체의 형제 노드 선택
+        nextSibling: 노드 객체의 직후 형재 노드 선택
+        firstChild:노드 객체의 첫번째 자식노드 선택
+        lastChild:노드 객체의 마지막 자식노드 선택
+        ChildNodes[]: 노드 객체의 자식 노드들을 순차적으로 선택, 배열
+        parentNod[]: 노드 객체의 부모노드 선택
+    
+    
+    
+    
+    -->
+    <body>
+        <div class="container">
+         
+            <ul><li>웹프로그래밍</li><ol id="now"><li>HTML</li><li>css</li><li>javascript</li></ol> <li>자바</li><li>오라클</li></ul>         
+
+            
+            <button onclick="f1()">현재 노드</button><span id= "s1"></span><br>
+            <button onclick="f2()">직전 형제 노드</button><span id= "s2"></span><br>
+            <button onclick="f3()">첫번째 자식 노드</button><span id= "s3"></span><br>
+            <button onclick="f4()">두번째 자식 노드</button><span id= "s4"></span><br>
+            <button onclick="f5()">마지막 자식 노드</button><span id= "s5"></span><br>
+
+
+
+        </div>
+        <script>
+            var now=document.getElementById("now")
+            var s1=document.getElementById("s1")
+            var s2=document.getElementById("s2")
+            var s3=document.getElementById("s3")
+            var s4=document.getElementById("s4")
+            var s5=document.getElementById("s5")
+            
+            function f1(){
+               now.style.border="1px solid red" 
+               s1.innerText="빨간 박스";
+            }
+
+            function f2(){
+
+               s2.innerText=now.previousSibling.innerText;
+            }
+
+            function f3(){
+               
+            }
+
+            function f4(){
+              
+            }
+
+
+
+    
+    
+        
+        </script>
+    </body>
+</html>

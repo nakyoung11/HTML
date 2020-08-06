@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+
+</style>
+<!--
+    1. focus, blur 
+      -focus 입력상자에서 포커스를 가질때 발생하는 이벤트
+      -blus 입력상자에서 포커스를 잃을때 
+-->
+<body>
+    <h3>회원가입</h3>
+    이름:<input type="text" name="" id="name"  onfocus="f()" onblur="b()"><br>
+    연락처:<input type="text" name="">
+    
+
+    <script>
+        var name= document.getElementById("name")
+        function f(){
+            document.getElementById("name").setAttribute("style","background-color:red;")
+          
+        }
+
+        function b(){  
+       
+            document.getElementById("name").setAttribute("style","background-color:blue;")
+        }
+    </script>
+
+</body>
+</html>

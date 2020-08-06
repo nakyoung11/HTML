@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 모델</title>
+</head>
+
+<style>
+    .container{width: 500px;}
+</style>
+<!---
+1. 이벤트: 웹브라우저에 로드된 HTML 문서와 사용자 사이의 상호작용으로 발생
+- 이벤트가 발생하였을 때 웹브라우저는 자바스크립트에 알려서 적절한 처리를 하도록 한다. 
+
+2. 이벤트 속성
+ 마우스 관련: click, dbclick, mouseover, mouseout, mouseenter
+ 키보드 관련: keypress, keydown, keyup
+ form태그 관련: change, focus, blur, select
+ 윈도우 관련: load,unload, resize
+
+-->
+<body>
+    <div class="container">
+       <h2> 마우스를 이미지에 올려보세요(마우스 오버~ 아웃)<h2>
+        <img src="img/android.png" onmouseover="mouseOn(this)" onmouseout="mouseOut(this)" >
+
+
+    </div>
+
+    <script>
+
+
+        function mouseOn(o){
+            o.src="img/iphone.png";
+
+        }
+        function mouseOut(o){
+            o.src="img/android.png"
+        }
+
+    </script>
+
+</body>
+</html>
