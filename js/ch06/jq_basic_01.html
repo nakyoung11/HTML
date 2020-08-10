@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<style>
+.container{width: 600px;}
+
+</style>
+<!--
+제이 쿼리의 주요 메소드
+1. 이벤트 처리
+-click, mouseover, mouseout
+2. dom객체 처리함수
+-html(): html 태그를 포함하여 텍스트를 설정하는 함수 (js:innerHTML)
+-text(): html 태그를 무시하고 텍스트만 설정하는 함수 (js:InnerTEXT)
+-css(): css설정을 하는 함수
+-attr(): 속성을 설정하는 함수
+3. 애니메이션 효과 함수
+ -show(), hide(), toggle()
+-->
+<body>
+    <div class="container">
+    <h3>제이쿼리 프로그래밍</h3>
+    <p class="sub" id="s1">html</p>
+    <p class="sub" id="s2">css</p>
+    <p class="sub" id="s3">우와</p>
+    <p class="sub" id="s4">잠이와요!!!!</p>
+
+</div>
+
+<script>
+    //1. 정식
+    $(document).ready(function(){    
+    //    $("p").css("backgroundColor","red")
+    //    $("p").css("color","yellow")
+
+    //2
+    //$("P").css("backgroundColor","red").css("color","yellow").css("textIndent", "20px")
+
+    //3
+    $("p").css({
+        backgroundColor: "pink",
+        textIndent: "15px"
+
+    })
+
+
+    })
+
+    //2. 약식
+    $(function(){
+        // $("p").css("backgroundColor","red")
+        // $("p").css("color","yellow")
+
+        //클래스
+        // $(".sub").css("backgroundColor","red")
+        // $(".sub").css("color","yellow")
+
+         //id 1번만 가능
+    //    $("#s2").css("backgroundColor","red")
+    //    $("#s2").css("color","yellow")
+
+    })
+
+
+</script>
+
+
+</body>
+</html>

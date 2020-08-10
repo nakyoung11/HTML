@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        .container{}
+    </style>
+</head>
+<body>       
+    <div class="container">
+        <h3>점등 소등</h3>
+        <img src="/chEx/img/lightoff.png" width="30%"  id="lightImg">
+        <br>
+        <button id="btn">점등</button>
+    </div>
+    <script>
+        $(function(){
+            $("#btn").click(function(){
+                if($("#btn").html()=="점등"){
+                   $("#lightImg").attr("src","/chEx/img/lighton.png")
+                   $("#btn").css("background:red")
+                   $("#btn").html("소등")
+
+                }else{
+                    $("#lightImg").attr("src","/chEx/img/lightoff.png")
+                   $("#btn").css("background:red")
+                   $("#btn").html("점등")
+
+                }
+
+
+            })
+
+
+        })
+
+    </script>
+    
+
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>   
+</head>
+<body>
+    <div class="container">
+
+
+        <ul>
+            <li>내용 1-1</li>
+            <li>내용 1-2</li>
+            <li>내용 1-3</li>
+        </ul>
+        <ul>
+            <li>내용 2-1</li>
+            <li>내용 2-2</li>
+            <li>내용 2-3</li>
+        </ul>
+
+
+    </div>
+
+
+    <script>
+        $(document).ready(function(){
+
+ // 문자열 배열
+        // var city = ['서울', '대구', '대전', '부산'];
+        // $.each(city, function(index, value){
+        //     document.write(index+": "+ value+"<br>")
+
+        // });
+
+        // // 2. 객체
+        // var subject={subject:"html", grade:1, score:85};
+        // $.each(subject, function(key, value){
+        //     document.write(key+": "+value+"<br>")
+
+        // });
+
+        // //객체의 배열
+        // var obj=[{"area": "서울"}, {"area":"부산"}, {"area": "전주"}];
+        // $.each(obj, function(index,value){
+        //     document.write(index+": "+value +"<br>")
+        // })
+
+        //태그
+        $.each($("#menu2 li"), function (index) {
+            console.log(index+": ",value)
+            
+        })
+        
+        
+        
+        
+        
+        
+        })
+
+
+        
+       
+    </script>
+    
+</body>
+</html>
