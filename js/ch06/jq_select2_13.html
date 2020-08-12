@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="outer_wrap">
+            
+            <h1>콘텐츠 탐색</h1>
+            <section id="inner_1">
+            <h1>contains(), contents(), has()</h1>
+            <p><span>내용 1</span></p>
+            <p><span>내용 2</span></p>
+            <p><span>내용 3</span></p>
+        </section>
+        <section id="inner_2">
+        <h1>not(), end()</h1>
+        <p>내용4</p>
+        <p>내용5</p>
+        <p>내용6</p>
+        </section>
+        </div>
+  </div>
+
+  <script>
+      //1. 내용을 포함하는 요소 선택
+      $(document).ready(function(){
+          $("#inner_1 p:contains(내용 1)").css("background","#ff0");
+
+          $("")
+
+      })
+  </script>
+</body>
+</html>

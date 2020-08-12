@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var fnSum=function(n1, n2){
+            return n1+n2
+        }
+
+        var fnMulti=function(n1, n2){
+            return n1 * n2
+        }
+
+        function doCalc(fn){
+
+            //A
+            var con= 10
+            var ps= 20
+            
+            //B
+            var res= fn(con, ps)
+
+            //C
+            console.log('res: '+res)
+        }
+
+        doCalc(fnSum);
+        doCalc(fnMulti);
+
+    </script>
+</body>
+</html>

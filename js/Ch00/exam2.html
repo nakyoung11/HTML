@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function foo(){
+            if(true){
+                var color='blue'
+            }
+            console.log(`color: ${color}`)
+        }
+
+        //var 는 함수 담위로 
+        //let은 감싸고 있는 스코프 안에서만 살아있어. 자바의 변수랑 동일한 스코프라이프를 가짐 
+        foo()
+    </script>
+</body>
+</html>

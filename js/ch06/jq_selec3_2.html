@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>객체조작 및 생성</h1>
+        <section id="sec_1">
+        <h2>이미지속성</h2>
+        <p><img src="/chEx/img/f1.png" alt="" border="2"></p></section>
+    </div>
+    <script>
+        $(document).ready(function(){
+            var srcVal=$("#sec_1 img").attr("src");
+
+            $("#sec_1 img").attr({
+                "width":200, "src":"/chEx/img/f2.png"
+            })
+        })
+    </script>
+</body>
+</html>
