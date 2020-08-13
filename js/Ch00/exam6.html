@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        Array.prototype.arr=[] //prototype 추가 가능 .. ?
+                        //변수명
+                        //상속고 오버라이드의 개념이 없기때문에 덮어쓰기만
+                        //모든 Array가 사용가능
+        Array.prototype.forEach2=function(fn){ 
+            for(var i=0; i<this.arr.length;i++){
+                var item= this.arr[i]
+                 fn(item)
+            }
+        }
+
+        var objArr=new Array()
+        objArr.arr=['A','B','C']
+        var func=function(a){
+           alert(a)
+       }
+
+       objArr.forEach2(func)       //   -->
+
+    
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+    // function show(item){
+    //     if(item%5==0)         
+    //      return item      
+    //     }
+    // function filter(arr, fn){
+    //     var myArr=[]
+    //         for(var i=0; i<arr.length; i++){
+    //             var item= arr[i]
+    //             var fnResult=fn(item)
+    //             myArr.push(fnResult)
+        
+    //         }
+    //         return myArr;
+            
+    //     }
+
+      
+    //    var arr2=[4, 15, 377, 395, 400, 1024, 3000]
+        
+       //console.log(filter(arr,show))
+
+
+
+       Array.prototype.arr=[]
+        Array.prototype.filter2=function(fn){
+          
+            var myArr=[]
+
+            for(var i=0; i<this.arr.length; i++){
+                var item =this.arr[i]
+                if(fn(item)){
+                    var fnResult= item;
+                    myArr.push(fnResult) //myArr.add() 와 같아. 
+                }
+            }
+            return myArr
+        }
+       
+        function show2(item){
+            return item%5==0        
+        }
+        
+        var arr2 =new Array();
+        arr2.arr = [4, 15, 377, 395, 400, 1024, 3000]
+
+        var result = arr2.filter2(show2);
+
+        console.log(result)
+
+
+    </script> 
+</body>
+</html>
