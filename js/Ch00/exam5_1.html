@@ -4,30 +4,123 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>
+</head>f
 <style> 
-    .container{width: 600px;}
-    #memberContainer{text-align: center;}
-    button{margin: 0px; width: 30px; padding: 2px;}
-    .seat { margin-top: 20px;}
-    #seatsContainer1{display:inline-block; margin-right: 20px;}
-    #seatsContainer2{display:inline-block; margin-right: 20px;}
-    #seatsContainer3{display:inline-block;clear: both; }
+    .container{width: 650px; }
+    .screen{width: 200px; height: 25px; border: 1px solid black; margin: 20px auto; text-align: center;}
+
+    #memberContainer{margin-left: 160px; display:inline-block;}
+    .conf{display:inline-block; margin-left: 30px;} 
+    button{margin: 1px; width: 30px; padding: 2px; border: 1px solid rgba(202, 199, 199, 0.541) }
+    #reset{width: 80px;margin-right: 5px;}
+    #seatsContainer { margin-top: 20px; }
+    .seats{display:inline-block; margin-right: 20px;}
+    form{margin: 10px auto; }
+
     .lal:first-child{margin-right: 20px;} 
+    #K1, #K2, #K4, #K5, #K14, #K15, #K17, #K18{background-image: url(data:image/png;base64,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) ;
+    background-size: 10px;
+    background-repeat: no-repeat;
+    background-color: rgb(252, 228, 232);}
+    .selectd{ background-color: red; font-weight: bold;}
+    
     
     
     
 </style>
 <body>
+    <form action="">
+    선택한 좌석 : <input type="text" name="val" value="" id="aa">
+        <!--배열로 -->
+    </form>
+
+    <input type="hidden" id="allSeatCnt" value="0">
     <div class="container">
+    
     <div id="memberContainer"></div>
-    <div class="seat">
-    <div id="seatsContainer1"></div>
-    <div id="seatsContainer2"></div>
-    <div id="seatsContainer3"></div>
+        
+    <div class="conf"><button id="reset" onclick="tot()">완료</button></div>
+
+    
+    <div class="screen">스크린</div>
+    
+    <div id="seatsContainer">
+ 
     </div>
+    <div>
+
     </div>
+
+    
     <script>
+        var selectedSeats=[] //버튼 클릭할때 마다 배열에 값 생성
+      
+
+        function switchSeat(seat){
+            var idx= selectedSeats.indexOf(seat)
+         
+            if (idx==-1){// 기존에 선택이 안되어 있었음
+                 //추가
+                if(allSeatCnt.value==selectedSeats.length){ 
+                    alert("좌석선택불가! 인원수를 확인하고 다시 선택해주세요.")    
+                    
+                }else {
+                     
+                     selectedSeats.push(seat) 
+           
+                    document.getElementById(seat).style.background="red"  
+                    document.getElementById(seat).style.fontWeight="bold"         
+                }
+           
+          }else{//기존의 선택이 되어있었음
+                    selectedSeats.splice(idx, 1) //삭제
+                    document.getElementById(seat).style.background="" 
+          }
+           aa.setAttribute('value',selectedSeats)
+            
+           console.log('selectedSeats : ' + selectedSeats)
+           console.log('sselectedSeats.length : '+ selectedSeats.length)
+        }
+
+        
+
+
+
+        // 예매 인원구하기
+        function updSeatCnt(){
+
+          allSeatCnt.value=Number(sel_adult_member_cnt.value) +Number(sel_teen_member_cnt.value)
+          console.log(allSeatCnt.value)
+          
+     
+        }   
+        
+        //인원 변경 막기 
+        function tot(){ 
+            if(reset.innerHTML=='완료'){
+             reset.innerText='다시선택'
+              sel_adult_member_cnt.setAttribute('disabled','true')
+              sel_teen_member_cnt.setAttribute('disabled','true')
+              
+           
+          }else if(reset.innerHTML=='다시선택'){
+            location.reload()
+            reset.innerHTML='완료'
+          
+          }
+        }
+         
+    
+
+
+
+
+
+        
+
+
+
+        //예매인원창 만들기
         function makeSlect(_title, _selectId){
             var label_adult=document.createElement('label')
             label_adult.setAttribute('class', 'lal')
@@ -35,6 +128,10 @@
             span_adult.innerHTML=`${_title} :  `
             var select_adult=document.createElement('select')
             select_adult.id=_selectId
+
+
+            select_adult.addEventListener('change',updSeatCnt)
+ 
             for(var i=0; i<=5; i++){
                 var opt=document.createElement('option')
                 opt.value= i
@@ -48,14 +145,23 @@
 
         }
 
+        //좌석만들기
+
         function makeSlectBtns(_arr, val_1, val_2){
            var div1=document.createElement('div')
+           div1.setAttribute('class','seats')
             for(var i=0; i<_arr.length;i++){
                 var div2=document.createElement('div') 
                 for(var z=val_1; z<=val_2; z++){
                  var btn=document.createElement('button')
+                 btn.setAttribute('onclick','switchSeat(this.id)')
+                 btn.setAttribute('id',_arr[i]+z )
+                // btn.setAttribute('style','background:blanchedalmond')
+                // addEventListener('click', ()>=switchSeat(txt)) 클릭하면 실행이 되기 때문에 가장 마지막 값을 가지고 온다. 그래서 var보다는 const, let 화살표로도 가능
                  btn.innerText= _arr[i]+z
+
                  div2.appendChild(btn)
+
                 }
                 
                 div1.appendChild(div2)
@@ -64,9 +170,7 @@
 
         }
 
-
-
-
+        //화면 만들기 
         function init(){
            var select_adult =makeSlect('성인','sel_adult_member_cnt')
            var select_teen  =makeSlect('청소년','sel_teen_member_cnt')
@@ -74,20 +178,33 @@
             memberContainer.appendChild(select_teen)
 
 
-            var arr=['A', 'B', 'C','D','E','F', 'G']
+            var arr=['A', 'B', 'C','D','E','F', 'G','H','R','J','K']
             var seat_btns=makeSlectBtns(arr,1,5)
-            seatsContainer1.appendChild(seat_btns) 
+            seatsContainer.appendChild(seat_btns) 
             var seat_btns2= makeSlectBtns(arr,6,13)
-            seatsContainer2.appendChild(seat_btns2)
+            seatsContainer.appendChild(seat_btns2)
             var seat_btns3= makeSlectBtns(arr,14,18)
-            seatsContainer3.appendChild(seat_btns3)
-            
-
+            seatsContainer.appendChild(seat_btns3)
+    
 
         }
+
+        
         
         init()
 
+      
+
+
+
+        // function choose(choo_id){   
+        // var chooseSeat= document.getElementById(choo_id)     
+        //     if(chooseSeat.style.background==""){
+        //     document.getElementById(choo_id).style.background="red"
+        //     } else if(chooseSeat.style.background=="red")
+        //     document.getElementById(choo_id).style.background=""
+                
+        // }
 
     </script>
 
